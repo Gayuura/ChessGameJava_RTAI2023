@@ -62,7 +62,9 @@ public class Position {
     
     
     /**
-     * Fonctio
+     * Fonction qui transforme la premiere coordonnée (x) en int
+     * @param x
+     * @return
      */
     public int GetxByValue(char x) {
     	int resultat = 0;

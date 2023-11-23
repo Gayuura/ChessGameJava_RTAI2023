@@ -10,11 +10,23 @@ public class Pion extends Piece {
      * @param pos
      * @param id
      */
-    public Pion (Couleur c, Position pos, int id) {
-        super(c, pos);
+    public Pion (Couleur c, int id) {
+        super(c);
         this.id = id;
     }
 
+    
+    
+    /**
+     * Fonction setter de l'attribut id
+     * @param id
+     */
+    public void set_id(int id) {
+    	this.id = id;
+    }
+    
+    
+    
     /**
      * Fonction qui verifie si la piece peut aller a cette position
      * @param pos

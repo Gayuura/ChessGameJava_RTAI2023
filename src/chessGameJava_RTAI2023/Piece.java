@@ -2,16 +2,14 @@ package chessGameJava_RTAI2023;
 
 public abstract class Piece {
     protected Couleur c;
-    protected Position pos;
 
     /**
      * Constructeur de la classe Piece
      * @param c
      * @param pos
      */
-    public Piece(Couleur c, Position pos) {
+    public Piece(Couleur c) {
         this.c = c;
-        this.pos = pos;
     }
 
     /**

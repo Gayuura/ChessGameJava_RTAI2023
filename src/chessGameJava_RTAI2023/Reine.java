@@ -7,10 +7,22 @@ public class Reine extends Piece {
      * @param c
      * @param pos
      */
-    public Reine(Couleur c, Position pos) {
-        super(c, pos);
+    public Reine(Couleur c) {
+        super(c);
     }
 
+    
+    
+    /**
+     * Fonction setter qui modifie l'attribut couleur
+     * @param c
+     */
+    public void set_couleur(Couleur c) {
+    	this.c = c;
+    }
+    
+    
+    
     /**
      * Fonction qui verifie si la piece peut aller a certaine position
      * @return
