@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7e6500c-ac38-4de0-bd79-4356fee813e6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" afterDir="false" />
-    </list>
+    <list default="true" id="b7e6500c-ac38-4de0-bd79-4356fee813e6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,6 +52,7 @@
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="chessGameJava_RTAI2023.Main" />
+      <module name="ChessGameJava_RTAI2023" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="chessGameJava_RTAI2023.*" />
@@ -78,7 +75,7 @@
       <workItem from="1700834783858" duration="747000" />
       <workItem from="1700835654263" duration="204000" />
       <workItem from="1700835870039" duration="395000" />
-      <workItem from="1700836288687" duration="1275000" />
+      <workItem from="1700836288687" duration="1436000" />
     </task>
     <servers />
   </component>
