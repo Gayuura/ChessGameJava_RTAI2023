@@ -6,6 +6,8 @@ public class Joueur {
 
 	private String nom;
 	private Couleur couleur;
+	private Position pos;
+	private Plateau plateau = new Plateau();
 	
 	//Liste des pieces disponibles en jeu
     private ArrayList<Piece> PieceDispo = new ArrayList<Piece>();
@@ -20,9 +22,11 @@ public class Joueur {
      * @param nom
      * @param couleur
      */
-    public Joueur(String nom, Couleur couleur) {
+    public Joueur(String nom, Couleur couleur, Position pos, Plateau plateau) {
     	this.nom = nom;
     	this.couleur = couleur;
+    	this.pos = pos;
+    	this.plateau = plateau;
     }
 
     
@@ -48,9 +52,46 @@ public class Joueur {
     
     
     /**
-     * Fonction jouer() de la classe Joueur qui va verifier le chemin et la position d'arrivée grace a la methode "PositionPossible" et puis lancer la méthode jouer_un_tour() de la classe Jeu pour faire le deplacement
+     * Fonction jouer() de la classe Joueur qui va verifier le chemin et la position d'arrivée sont possibles et puis fera le deplacement voulu de la piece
+     * @param pos_depart
+     * @param pos_arrivee
      */
-    public void jouer() {
-
+    public void jouer(Boolean premTour, Position pos_depart, Position pos_arrivee) {
+    	boolean possible = false;
+    	Piece [][] piece = plateau.get_plateau();
+    	//Récuperation du x et du y (version indice de matrice) de la position de depart
+    	int x = pos.GetxByValue(pos_depart.get_x());
+    	int y = pos_depart.get_y();
+    	//Récuperation du type de la piece qu'on souhaite deplacer
+    	String maClasse = piece[x][y].getClass().getName();
+    	
+    	
+    	switch(maClasse) {
+    	case "Pion":
+    		possible = Pion.PositionPossible(plateau,piece[x][y].get_couleur(),pos_depart,pos_arrivee);
+    		break;
+    	case "Tour":
+    		possible = Tour.PositionPossible(piece[x][y].get_couleur(),pos_depart,pos_arrivee);
+    		break;
+    	case "Fou":
+    		possible = Fou.PositionPossible(piece[x][y].get_couleur(),pos_depart,pos_arrivee);
+    		break;
+    	case "Cavalier":
+    		possible = Cavalier.PositionPossible(piece[x][y].get_couleur(),pos_depart,pos_arrivee);
+    		break;
+    	case "Reine":
+    		possible = Reine.PositionPossible(piece[x][y].get_couleur(),pos_depart,pos_arrivee);
+    		break;
+    	case "Roi":
+    		possible = Roi.PositionPossible(piece[x][y].get_couleur(),pos_depart,pos_arrivee);
+    		break;
+    	}
+    	
+    	if (!possible) {
+    		System.out.println("Votre "+maClasse+" ne peut se deplacer a la position voulue !");
+    	}
+    	else {
+    		
+    	}
     }
 }

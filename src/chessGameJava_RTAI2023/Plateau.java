@@ -27,6 +27,20 @@ public class Plateau {
     
     
     /**
+     * Fonction qui verifie si une case est vide
+     * @param Case
+     * @return
+     */
+    public boolean estVide(Piece Case) {
+    	if (Case.getClass().getName().contains("Pion") || Case.getClass().getName().contains("Tour") || Case.getClass().getName().contains("Cavalier") || Case.getClass().getName().contains("Fou") || Case.getClass().getName().contains("Reine") || Case.getClass().getName().contains("Roi")) {
+    		return false;
+    	}
+    	return true;
+    }
+    
+    
+    
+    /**
      * Fonction qui va creer, initialiser et placer les pieces sur le plateau et dans les listes des pieces disponibles des deux joueurs
      */
     public void initialiser() {   

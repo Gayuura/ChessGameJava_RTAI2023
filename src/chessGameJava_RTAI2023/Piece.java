@@ -11,5 +11,15 @@ public abstract class Piece {
     public Piece(Couleur c) {
         this.c = c;
     }
+    
+    
+    
+    /**
+     * Fonction getter de l'attribut couleur
+     * @return
+     */
+    public Couleur get_couleur() {
+    	return this.c;
+    }
 
 }

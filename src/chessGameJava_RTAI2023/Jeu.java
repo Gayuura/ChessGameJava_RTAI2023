@@ -7,17 +7,6 @@ public class Jeu implements InterJeu{
     
     
     /**
-     * Fonction qui permettra de faire jouer un tour, c'est a dire de faire le deplacement de la piece
-     * @param piece
-     * @param arrivee
-     */
-    public void jouer_un_tour(Position piece, Position arrivee) {
-
-    }
-
-    
-    
-    /**
      * Fonction qui verifiera si la partie est terminé
      * @return
      */
