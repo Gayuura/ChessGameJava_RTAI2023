@@ -6,6 +6,7 @@ public class Position {
     private int y;
 
     
+    
     /**
      * Constructeur de la classe Position
      * @param x
@@ -17,6 +18,7 @@ public class Position {
     }
     
     
+    
     /**
      * Fonction getter de x
      * @return
@@ -26,6 +28,7 @@ public class Position {
     }
     
     
+    
     /**
      * Fonction getter de y
      * @return
@@ -33,6 +36,7 @@ public class Position {
     public int get_y() {
     	return this.get_y();
     }
+    
     
     
     /**
@@ -59,6 +63,7 @@ public class Position {
     	Position pos = new Position(x,y);
     	return pos;
     }
+    
     
     
     /**

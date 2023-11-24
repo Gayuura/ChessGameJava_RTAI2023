@@ -4,6 +4,10 @@ public class Pion extends Piece {
 
     private int id;
 
+    
+    
+    
+    
     /**
      * Constructeur de la classe Pion
      * @param c
@@ -28,11 +32,17 @@ public class Pion extends Piece {
     
     
     /**
-     * Fonction qui verifie si la piece peut aller a cette position
-     * @param pos
+     * Fonction qui verifie si la piece peut aller a la position d'arrivée en verifiant le chemin qui doit etre parcouru
+     * @param PremTour
+     * @param depart
+     * @param arrivee
      * @return
      */
-    public boolean checkPos(Position pos) {
+    public boolean PositionPossible(boolean PremTour, Position depart, Position arrivee) {
+    	
+    	boolean possible = false;
+    	
+    	
     	return true;
     }
 }

@@ -12,13 +12,4 @@ public abstract class Piece {
         this.c = c;
     }
 
-    /**
-     * Fonction qui verifie si le chemin peut etre pris par la piece en parametre
-     * @param depart
-     * @param arrivee
-     * @return
-     */
-    public boolean verifChemin(Position depart, Position arrivee) {
-    	return true;
-    }
 }

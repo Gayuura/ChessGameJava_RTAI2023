@@ -3,6 +3,8 @@ package chessGameJava_RTAI2023;
 public class Fou extends Piece {
     private int id;
 
+    
+    
     /**
      * Constructeur de la classe Fou
      * @param c
@@ -27,10 +29,16 @@ public class Fou extends Piece {
     
     
     /**
-     * Fonction qui verifie si la piece peut aller a certaine position
+     * Fonction qui verifie si la piece peut aller a la position d'arrivée en verifiant le chemin qui doit etre parcouru
+     * @param depart
+     * @param arrivee
      * @return
      */
-    public boolean checkPos() {
+    public boolean PositionPossible(Position depart, Position arrivee) {
+    	
+    	boolean possible = false;
+    	
+    	
     	return true;
     }
 }
