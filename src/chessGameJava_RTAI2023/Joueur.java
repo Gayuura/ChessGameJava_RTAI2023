@@ -6,8 +6,8 @@ public class Joueur {
 
 	private String nom;
 	private Couleur couleur;
-	private Position pos;
-	private Plateau plateau = new Plateau();
+
+
 	
 	//Liste des pieces disponibles en jeu
     private ArrayList<Piece> PieceDispo = new ArrayList<Piece>();
@@ -22,11 +22,9 @@ public class Joueur {
      * @param nom
      * @param couleur
      */
-    public Joueur(String nom, Couleur couleur, Position pos, Plateau plateau) {
+    public Joueur(String nom, Couleur couleur) {
     	this.nom = nom;
     	this.couleur = couleur;
-    	this.pos = pos;
-    	this.plateau = plateau;
     }
 
     
@@ -56,42 +54,48 @@ public class Joueur {
      * @param pos_depart
      * @param pos_arrivee
      */
-    public void jouer(Boolean premTour, Position pos_depart, Position pos_arrivee) {
+    public void jouer(Plateau plateau, Boolean premTour, Position pos_depart, Position pos_arrivee) {
     	boolean possible = false;
-    	Piece [][] piece = plateau.get_plateau();
-    	//Récuperation du x et du y (version indice de matrice) de la position de depart
-    	int x = pos.GetxByValue(pos_depart.get_x());
-    	int y = pos_depart.get_y();
+    	
+    	//Récuperation des x et des y (version indice de matrice) de la position de depart et d'arrivée
+    	int xD = pos_depart.GetxByValue(pos_depart.get_x());
+    	int yD = pos_depart.get_y();
+    	int xA = pos_arrivee.GetxByValue(pos_arrivee.get_x());
+    	int yA = pos_arrivee.get_y();
+    	Piece [][] aux = plateau.get_plateau();
+    	
+
     	//Récuperation du type de la piece qu'on souhaite deplacer
-    	String maClasse = piece[x][y].getClass().getName();
     	
-    	
-    	switch(maClasse) {
+    	switch(plateau.get_plateau()[xD][yD].toString()) {
     	case "Pion":
-    		possible = Pion.PositionPossible(plateau,piece[x][y].get_couleur(),pos_depart,pos_arrivee);
+    		possible = Pion.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),pos_depart,pos_arrivee);
     		break;
     	case "Tour":
-    		possible = Tour.PositionPossible(piece[x][y].get_couleur(),pos_depart,pos_arrivee);
+    		possible = Tour.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),pos_depart,pos_arrivee);
     		break;
     	case "Fou":
-    		possible = Fou.PositionPossible(piece[x][y].get_couleur(),pos_depart,pos_arrivee);
+    		possible = Fou.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),pos_depart,pos_arrivee);
     		break;
     	case "Cavalier":
-    		possible = Cavalier.PositionPossible(piece[x][y].get_couleur(),pos_depart,pos_arrivee);
+    		possible = Cavalier.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),pos_depart,pos_arrivee);
     		break;
     	case "Reine":
-    		possible = Reine.PositionPossible(piece[x][y].get_couleur(),pos_depart,pos_arrivee);
+    		possible = Reine.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),pos_depart,pos_arrivee);
     		break;
     	case "Roi":
-    		possible = Roi.PositionPossible(piece[x][y].get_couleur(),pos_depart,pos_arrivee);
+    		possible = Roi.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),pos_depart,pos_arrivee);
     		break;
     	}
     	
     	if (!possible) {
-    		System.out.println("Votre "+maClasse+" ne peut se deplacer a la position voulue !");
+    		System.out.println("Votre "+plateau.get_plateau()[xD][yD].toString()+" "+plateau.get_plateau()[xD][yD].get_couleur()+" ne peut se deplacer a la position voulue !");
     	}
     	else {
-    		
+        	aux[xA][yA] = aux[xD][yD];
+        	aux[xD][yD] = null;
+        	
+        	plateau.set_plateau(aux);
     	}
     }
 }

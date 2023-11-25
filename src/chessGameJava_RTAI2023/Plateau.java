@@ -7,6 +7,18 @@ public class Plateau {
     
     
     /**
+     * Constructeur du plateau
+     * @param JBlanc
+     * @param JNoir
+     */
+    public Plateau(Joueur JBlanc, Joueur JNoir) {
+    	this.JBlanc = JBlanc;
+    	this.JNoir = JNoir;
+    }
+    
+    
+    
+    /**
      * Fonction getter pour l'attribut plateau
      * @return
      */
@@ -32,103 +44,68 @@ public class Plateau {
      * @return
      */
     public boolean estVide(Piece Case) {
-    	if (Case.getClass().getName().contains("Pion") || Case.getClass().getName().contains("Tour") || Case.getClass().getName().contains("Cavalier") || Case.getClass().getName().contains("Fou") || Case.getClass().getName().contains("Reine") || Case.getClass().getName().contains("Roi")) {
-    		return false;
+    	if (Case != null) {
+    		return false;    		
     	}
     	return true;
     }
     
     
     
+    /* JUSTE POUR TESTER LA METHODE INITIALISER (TEST REUSSI)
+    public void AfficherPlateau() {
+    	System.out.println("Affichage du plateau");
+    	for (int i = plateau.length-1; i >= 0; i--) {
+    		for (int j = 0; j < plateau.length; j++) {
+    			if (!estVide(plateau[i][j])) {
+    				if ((plateau[i][j].getClass().getName().contains("Reine")) || (plateau[i][j].getClass().getName().contains("Roi"))){
+    					System.out.print("    "+plateau[i][j].toString()+"_"+plateau[i][j].get_couleur());
+    				}
+    				else
+    					System.out.print("    "+plateau[i][j].toString()+"_"+plateau[i][j].get_couleur()+"_"+plateau[i][j].get_id());
+    			}
+    			else 
+    				System.out.print("                                       ");
+    			
+    		}
+    		System.out.println("\n");
+    	}
+    }
+    */
+    
     /**
      * Fonction qui va creer, initialiser et placer les pieces sur le plateau et dans les listes des pieces disponibles des deux joueurs
      */
     public void initialiser() {   
     	
-    	//Création et Placement des Pions Blancs et Noirs
-    	Pion PionBlanc = new Pion(Couleur.Blanc,0);
-    	plateau[1][0] = PionBlanc;
-    	
-    	JBlanc.AddPieceDispo(PionBlanc);		//Ajout de la piece a la liste des pieces dispo du joueur Blanc
-    	
-    	Pion PionNoir = new Pion(Couleur.Noir,0);
-    	plateau[6][0] = PionNoir;
-    	
-    	JNoir.AddPieceDispo(PionNoir);			//Ajout de la piece a la liste des pieces dispo du joueur Noir
-    	
-    	for (int i = 1; i < 8; i++) {
-    		PionBlanc.set_id(i);
-    		plateau[1][i] = PionBlanc;
-    		JBlanc.AddPieceDispo(PionBlanc);
-    		
-    		PionNoir.set_id(i);
-    		plateau[6][i] = PionNoir;
-    		JNoir.AddPieceDispo(PionNoir);
+    	//Création et Placement des Pions Blancs
+    	for (int j = 0; j < plateau.length; j++) {
+    		plateau[1][j] = new Pion(Couleur.Blanc,j);
     	}
     	
+    	//Création et Placement des Pions Noirs
+    	for (int j = 0; j < plateau.length; j++) {
+    		plateau[6][j] = new Pion(Couleur.Noir,j);
+    	}
     	
-    	//Création et Placement des Tours Blanches sur le plateau et dans la liste des pieces disponibles
-    	Tour TourBlanche = new Tour(Couleur.Blanc,0);
-    	plateau[0][0] = TourBlanche;
-    	JBlanc.AddPieceDispo(TourBlanche);
-    	TourBlanche.set_id(1);;
-    	plateau[0][7] = TourBlanche;
-    	JBlanc.AddPieceDispo(TourBlanche);
+    	//Création et Placement des autres Pieces Blanches
+    	plateau[0][0] = new Tour(Couleur.Blanc,0);
+    	plateau[0][1] = new Cavalier(Couleur.Blanc,0);
+    	plateau[0][2] = new Fou(Couleur.Blanc,0);
+    	plateau[0][3] = new Reine(Couleur.Blanc);
+    	plateau[0][4] = new Roi(Couleur.Blanc);
+    	plateau[0][5] = new Fou(Couleur.Blanc,1);
+    	plateau[0][6] = new Cavalier(Couleur.Blanc,1);
+    	plateau[0][7] = new Tour(Couleur.Blanc,1);
     	
-    	//Création et Placement des Cavaliers Blancs sur le plateau et dans la liste des pieces disponibles
-    	Cavalier CavalierBlanc = new Cavalier(Couleur.Blanc,0);
-    	plateau[0][1] = CavalierBlanc;
-    	JBlanc.AddPieceDispo(CavalierBlanc);
-    	CavalierBlanc.set_id(1);
-    	plateau[0][6] = CavalierBlanc;
-    	JBlanc.AddPieceDispo(CavalierBlanc);
-    	
-    	//Création et Placement des Fous Blancs sur le plateau et dans la liste des pieces disponibles
-    	Fou FouBlanc = new Fou(Couleur.Blanc,0);
-    	plateau[0][2] = FouBlanc;
-    	JBlanc.AddPieceDispo(FouBlanc);
-    	FouBlanc.set_id(1);
-    	plateau[0][5] = FouBlanc;
-    	JBlanc.AddPieceDispo(FouBlanc);
-    	
-    	//Création et Placement des Tours Noires sur le plateau et dans la liste des pieces disponibles
-    	Tour TourNoire = new Tour(Couleur.Noir,0);
-    	plateau[7][0] = TourNoire;
-    	JNoir.AddPieceDispo(TourNoire);
-    	TourNoire.set_id(1);
-    	plateau[7][7] = TourNoire;
-    	JNoir.AddPieceDispo(TourNoire);
-    	
-    	//Création et Placement des Cavalier Noirs sur le plateau et dans la liste des pieces disponibles
-    	Cavalier CavalierNoir = new Cavalier(Couleur.Noir,0);
-    	plateau[7][1] = CavalierNoir;
-    	JNoir.AddPieceDispo(CavalierNoir);
-    	CavalierNoir.set_id(1);
-    	plateau[7][6] = CavalierNoir;
-    	JNoir.AddPieceDispo(CavalierNoir);
-    	
-    	//Création et Placement des Fous Noires sur le plateau et dans la liste des pieces disponibles
-    	Fou FouNoir = new Fou(Couleur.Noir,0);
-    	plateau[7][2] = FouNoir;
-    	JNoir.AddPieceDispo(FouNoir);
-    	FouNoir.set_id(1);
-    	plateau[7][5] = FouNoir;
-    	JNoir.AddPieceDispo(FouNoir);
-    	
-    	//Création et Placement des Reines sur le plateau et dans la liste des pieces disponibles
-    	Reine reine = new Reine(Couleur.Blanc);
-    	plateau[0][3] = reine;
-    	JBlanc.AddPieceDispo(reine);
-    	reine.set_couleur(Couleur.Noir);
-    	plateau[7][3] = reine;
-    	JNoir.AddPieceDispo(reine);
-    	
-    	//Création et Placement des Roi sur le plateau et dans la liste des pieces disponibles
-    	Roi roi = new Roi(Couleur.Blanc);
-    	plateau[0][4] = roi;
-    	JBlanc.AddPieceDispo(roi);
-    	roi.set_couleur(Couleur.Noir);
-    	plateau[7][4] = roi;
-    	JNoir.AddPieceDispo(roi);
+    	//Création et Placement des autres Pieces Noires
+    	plateau[7][0] = new Tour(Couleur.Noir,0);
+    	plateau[7][1] = new Cavalier(Couleur.Noir,0);
+    	plateau[7][2] = new Fou(Couleur.Noir,0);
+    	plateau[7][3] = new Reine(Couleur.Noir);
+    	plateau[7][4] = new Roi(Couleur.Noir);
+    	plateau[7][5] = new Fou(Couleur.Noir,1);
+    	plateau[7][6] = new Cavalier(Couleur.Noir,1);
+    	plateau[7][7] = new Tour(Couleur.Noir,1);
     }
 }

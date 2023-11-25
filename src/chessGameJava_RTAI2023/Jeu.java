@@ -3,7 +3,7 @@ package chessGameJava_RTAI2023;
 public class Jeu implements InterJeu{
     private Joueur JBlanc;
     private Joueur JNoir;
-
+ 
     
     
     /**

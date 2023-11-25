@@ -8,12 +8,21 @@ public class Fou extends Piece {
     /**
      * Constructeur de la classe Fou
      * @param c
-     * @param pos
      * @param id
      */
     public Fou(Couleur c, int id) {
         super(c);
         this.id = id;
+    }
+    
+    
+    
+    /**
+     * Fonction getter pour l'attribut id
+     * @return
+     */
+    public int get_id() {
+    	return this.id;
     }
     
     

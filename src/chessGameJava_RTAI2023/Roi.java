@@ -7,12 +7,11 @@ public class Roi extends Piece {
     /**
      * Constructeur de la classe Roi
      * @param c
-     * @param pos
      */
     public Roi(Couleur c) {
         super(c);
     }
-
+    
     
     
     /**
@@ -20,7 +19,7 @@ public class Roi extends Piece {
      * @param c
      */
     public void set_couleur(Couleur c) {
-    	this.c = c;
+    	super.set_couleur(c);
     }
     
     

@@ -4,10 +4,11 @@ public class Pion extends Piece {
 
     private int id;
     
+    
+    
     /**
      * Constructeur de la classe Pion
      * @param c
-     * @param pos
      * @param id
      */
     public Pion (Couleur c, int id) {
@@ -15,6 +16,16 @@ public class Pion extends Piece {
         this.id = id;
     }
 
+    
+    
+    /**
+     * Fonction getter pour l'attribut id
+     * @return
+     */
+    public int get_id() {
+    	return this.id;
+    }
+    
     
     
     /**

@@ -9,7 +9,6 @@ public class Tour extends Piece {
     /**
      * Constructeur de la classe Tour
      * @param c
-     * @param pos
      * @param id
      */
     public Tour (Couleur c, int id) {
@@ -17,6 +16,16 @@ public class Tour extends Piece {
         this.id = id;
     }
 
+    
+    
+    /**
+     * Fonction getter pour l'attribut id
+     * @return
+     */
+    public int get_id() {
+    	return this.id;
+    }
+    
     
     
     /**

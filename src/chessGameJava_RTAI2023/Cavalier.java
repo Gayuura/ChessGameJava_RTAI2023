@@ -9,7 +9,6 @@ public class Cavalier extends Piece {
     /**
      * Constructeur de la classe Cavalier
      * @param c
-     * @param pos
      * @param id
      */
     public Cavalier (Couleur c, int id) {
@@ -17,6 +16,16 @@ public class Cavalier extends Piece {
         this.id = id;
     }
 
+    
+    
+    /**
+     * Fonction getter pour l'attribut id
+     * @return
+     */
+    public int get_id() {
+    	return this.id;
+    }
+    
     
     
     /**
