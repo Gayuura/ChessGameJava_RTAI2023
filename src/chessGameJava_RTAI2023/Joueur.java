@@ -50,6 +50,16 @@ public class Joueur {
     
     
     /**
+     * Fonction qui supprime la piece de la liste des pieces disponibles
+     * @param piece
+     */
+    public void SuppPieceDispo(int index) {
+    	this.PieceDispo.remove(index);
+    }
+    
+    
+    
+    /**
      * Fonction jouer() de la classe Joueur qui va verifier le chemin et la position d'arrivée sont possibles et puis fera le deplacement voulu de la piece
      * @param pos_depart
      * @param pos_arrivee
@@ -87,14 +97,23 @@ public class Joueur {
     		possible = Roi.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),pos_depart,pos_arrivee);
     		break;
     	}
-    	
+    	//Si la piece ne peut pas se deplacer a la position d'arrivée
     	if (!possible) {
     		System.out.println("Votre "+plateau.get_plateau()[xD][yD].toString()+" "+plateau.get_plateau()[xD][yD].get_couleur()+" ne peut se deplacer a la position voulue !");
     	}
+    	//Sinon
     	else {
-        	aux[xA][yA] = aux[xD][yD];
+    		//Si la case d'arrivée n'est pas vide
+    		if (!(plateau.estVide(plateau.get_plateau()[xA][yA]))){
+	        	//On l'ajoute a la liste des pieces mangée
+	        	this.AddPieceMangee(plateau.get_plateau()[xA][yA]);
+	        	
+	        	//On la supprime de la liste des pieces disponibles
+	        	this.SuppPieceDispo(this.PieceDispo.indexOf(plateau.get_plateau()[xA][yA]));
+    		}
+    		//On fait le deplacement de la piece vers la position d'arrivée
+    		aux[xA][yA] = aux[xD][yD];
         	aux[xD][yD] = null;
-        	
         	plateau.set_plateau(aux);
     	}
     }
