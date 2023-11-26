@@ -4,7 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7e6500c-ac38-4de0-bd79-4356fee813e6" name="Changes" comment="" />
+    <list default="true" id="b7e6500c-ac38-4de0-bd79-4356fee813e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/b_bishop_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/b_king_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/b_knight_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/b_pawn_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/b_queen_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/b_rook_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/square brown dark_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/square brown light_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/square gray dark _png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/square gray light _png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/w_bishop_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/w_king_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/w_knight_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/w_pawn_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/w_queen_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/w_rook_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/JPanelPlateau$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/b_bishop_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/b_king_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/b_knight_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/b_pawn_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/b_queen_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/b_rook_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/square brown dark_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/square brown light_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/square gray dark _png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/square gray light _png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/w_bishop_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/w_king_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/w_knight_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/w_pawn_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/w_queen_png_shadow_1024px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/w_rook_png_shadow_1024px.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/JPanelPlateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/JPanelPlateau.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,33 +69,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Bastien/Documents/Alternance/Capitole (Cours)/Prog/TP/ChessGameJava_RTAI202_old",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;378&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bastien/Documents/Alternance/Capitole (Cours)/Prog/TP/ChessGameJava_RTAI202_old&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="chessGameJava_RTAI2023.Main" />
       <module name="ChessGameJava_RTAI2023" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="chessGameJava_RTAI2023.*" />
+          <option name="PATTERN" value="chessGameJava_RTAI2023.JPanelPlateau" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -75,7 +116,10 @@
       <workItem from="1700834783858" duration="747000" />
       <workItem from="1700835654263" duration="204000" />
       <workItem from="1700835870039" duration="395000" />
-      <workItem from="1700836288687" duration="1436000" />
+      <workItem from="1700836288687" duration="8547000" />
+      <workItem from="1700929760892" duration="579000" />
+      <workItem from="1700931957770" duration="684000" />
+      <workItem from="1701000406925" duration="8398000" />
     </task>
     <servers />
   </component>

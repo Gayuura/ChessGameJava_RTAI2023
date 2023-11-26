@@ -1,6 +1,7 @@
 package chessGameJava_RTAI2023;
 
 import java.util.Arrays;
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,6 +18,13 @@ public class Main {
         plateau.initialiser();
         plateau.AfficherPlateau(); //JUSTE POUR TESTER LA METHODE INITIALISER (TEST REUSSI)
 
+        JPanelPlateau GuiPlateau = new JPanelPlateau();
+
+
+
+
+
+//        Position pos = new Position ('a',0);
         
         
         
