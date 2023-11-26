@@ -40,6 +40,8 @@ public class Pion extends Piece {
     
     /**
      * Fonction qui verifie si la piece peut aller a la position d'arrivée en verifiant le chemin qui doit etre parcouru
+     * @param plateau
+     * @param PionPremDepla
      * @param couleur
      * @param depart
      * @param arrivee

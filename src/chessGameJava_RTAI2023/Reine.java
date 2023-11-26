@@ -26,16 +26,19 @@ public class Reine extends Piece {
     
     /**
      * Fonction qui verifie si la piece peut aller a la position d'arrivée en verifiant le chemin qui doit etre parcouru
+     * @param plateau
      * @param couleur
      * @param depart
      * @param arrivee
      * @return
      */
-    public static boolean PositionPossible(Couleur couleur, Position depart, Position arrivee) {
-    	
-    	boolean possible = false;
+    public static boolean PositionPossible(Plateau plateau, Couleur couleur, Position depart, Position arrivee) {
     	
     	
-    	return true;
+    	if ((Fou.PositionPossible(plateau, couleur, depart, arrivee)) || (Tour.PositionPossible(plateau, couleur, depart, arrivee))) {
+    		return true;
+    	}
+    	
+    	return false;
     }
 }

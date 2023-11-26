@@ -134,16 +134,16 @@ public class Joueur {
     		possible = Tour.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
     		break;
     	case "Fou":
-    		possible = Fou.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
+    		possible = Fou.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
     		break;
     	case "Cavalier":
-    		possible = Cavalier.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
+    		possible = Cavalier.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
     		break;
     	case "Reine":
-    		possible = Reine.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
+    		possible = Reine.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
     		break;
     	case "Roi":
-    		possible = Roi.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
+    		possible = Roi.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
     		break;
     	}
     	//Si la piece ne peut pas se deplacer a la position d'arrivée

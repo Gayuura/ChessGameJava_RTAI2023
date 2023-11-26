@@ -31,7 +31,7 @@ public class Roi extends Piece {
      * @param arrivee
      * @return
      */
-    public static boolean PositionPossible(Couleur couleur, Position depart, Position arrivee) {
+    public static boolean PositionPossible(Plateau plateau, Couleur couleur, Position depart, Position arrivee) {
     	
     	boolean possible = false;
     	
