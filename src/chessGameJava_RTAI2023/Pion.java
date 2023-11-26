@@ -45,33 +45,35 @@ public class Pion extends Piece {
      * @param arrivee
      * @return
      */
-    public static boolean PositionPossible(Plateau plateau, Couleur couleur, Position depart, Position arrivee) {
+    public static boolean PositionPossible(Plateau plateau, Boolean premTour, Couleur couleur, Position depart, Position arrivee) {
     	
     	boolean possible = false;
-    	int xD = depart.GetxByValue(depart.get_x());
-    	int yD = depart.get_y();
-    	int xA = arrivee.GetxByValue(arrivee.get_x());
-    	int yA = arrivee.get_y();
+    	int xD = depart.get_x();
+    	int yD = depart.GetYByValue(depart.get_y());
+    	int xA = arrivee.get_x();
+    	int yA = arrivee.GetYByValue(arrivee.get_y());
     	
     	
     	if (couleur == Couleur.Blanc) {
     		//S'il avance diagonalement d'une case
-    		if (((xA-xD == 1) || (xA-xD == -1)) && ((yA-yD == 1)) && (!plateau.estVide(plateau.get_plateau()[xA][yA]))) {
+    		if (((yA-yD == 1) || (yA-yD == -1)) && ((xA-xD == 1)) && (!plateau.estVide(plateau.get_plateau()[xA][yA]))) {
     			if (plateau.get_plateau()[xA][yA].get_couleur() == Couleur.Noir) {
     				possible = true;
     			}
     		}
     		//S'il avance tout droit de 2 cases
-    		if ((yA-yD == 2) && (yD == 1) && (xA-xD == 0)) {
-    			if (plateau.estVide(plateau.get_plateau()[xA][yA-1])) {
-    				possible = true;
-    			}
-    			if (plateau.estVide(plateau.get_plateau()[xA][yA])) {
-    				possible = true;
-    			}
+    		if (premTour) {
+	    		if ((xA-xD == 2) && (xD == 1) && (yA-yD == 0)) {
+	    			if (plateau.estVide(plateau.get_plateau()[xA][yA-1])) {
+	    				possible = true;
+	    			}
+	    			if (plateau.estVide(plateau.get_plateau()[xA][yA])) {
+	    				possible = true;
+	    			}
+	    		}
     		}
     		//S'il avance tout droit d'une seule case
-    		if ((yA-yD == 1) && (xA-xD == 0)) {
+    		if ((xA-xD == 1) && (yA-yD == 0)) {
     			if (plateau.estVide(plateau.get_plateau()[xA][yA])) {
     				possible = true;
     			}
@@ -79,19 +81,19 @@ public class Pion extends Piece {
     	}
     	else if (couleur == Couleur.Noir) {
     		//S'il avance diagonalement d'une case
-    		if (((xA-xD == 1) || (xA-xD == -1)) && ((yA-yD == -1)) && (!plateau.estVide(plateau.get_plateau()[xA][yA]))) {
+    		if (((yA-yD == 1) || (yA-yD == -1)) && ((xA-xD == -1)) && (!plateau.estVide(plateau.get_plateau()[xA][yA]))) {
     			if (plateau.get_plateau()[xA][yA].get_couleur() == Couleur.Blanc) {
     				possible = true;
     			}
     		}
     		//S'il avance tout droit de 2 cases
-    		if ((yA - yD == -2) && (yD == 6) && (xA-xD == 0)) {
+    		if ((xA - xD == -2) && (xD == 6) && (yA-yD == 0)) {
     			if (plateau.estVide(plateau.get_plateau()[xA][yA+1])) {
     				possible = true;
     			}
     		}
     		//S'il avance tout droit d'une seule case
-    		if((yA-yD == -1) && (xA-xD == 0)) {
+    		if((xA-xD == -1) && (yA-yD == 0)) {
     			if (plateau.estVide(plateau.get_plateau()[xA][yA])) {
     				possible = true;
     			}

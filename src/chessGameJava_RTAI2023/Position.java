@@ -2,8 +2,8 @@ package chessGameJava_RTAI2023;
 
 import java.util.Scanner;
 public class Position {
-    private char x;
-    private int y;
+    private int x;
+    private char y;
 
     
     
@@ -12,7 +12,7 @@ public class Position {
      * @param x
      * @param y
      */
-    public Position(char x, int y) {
+    public Position(int x, char y) {
         this.x = x;
         this.y = y;
     }
@@ -23,7 +23,7 @@ public class Position {
      * Fonction getter de x
      * @return
      */
-    public char get_x() {
+    public int get_x() {
     	return this.x;
     }
     
@@ -33,8 +33,28 @@ public class Position {
      * Fonction getter de y
      * @return
      */
-    public int get_y() {
-    	return this.get_y();
+    public char get_y() {
+    	return this.y;
+    }
+    
+    
+    
+    /**
+     * Fonction setter de l'attribut x
+     * @param x
+     */
+    public void set_x(int x) {
+    	this.x = x;
+    }
+    
+    
+    
+    /**
+     * Fonction setter de l'attribut y
+     * @param y
+     */
+    public void set_y(char y) {
+    	this.y = y;
     }
     
     
@@ -43,25 +63,26 @@ public class Position {
      * Fonction qui demande une position et verifie si la position est comprise dans le plateau
      * @return
      */
-    public Position DemanderPos() {
+    public void DemanderPos() {
     	
     	Scanner scanner = new Scanner(System.in);
-    	System.out.print("Veuillez saisir une position x (a, b, c, d, e, f, g ou h)\n x : ");
-    	char x = scanner.next().charAt(0);
-    	while ((x != 'a') && (x != 'b') && (x != 'c') && (x != 'd') && (x != 'e') && (x != 'f') && (x != 'g') && (x != 'h')) {
-    		System.out.print("Votre position x se situe en dehors du plateau, \n veuillez resaisir une position entre a et h !");
-    		x = scanner.next().charAt(0);
+
+    	System.out.print("Veuillez saisir une position x (1, 2, 3, 4, 5, 6, 7 ou 8)\n x : ");
+    	int x = scanner.nextInt();
+    	while ((x > 8) || (x < 1)) {
+    		System.out.print("Votre position x se situe en dehors du plateau, \n veuillez resaisir une position entre 1 et 8 !");
+    		x = scanner.nextInt();
     	}
     	
-    	System.out.print("Parfait, veuillez saisir à présent une position y (1, 2, 3, 4, 5, 6, 7 ou 8)\n y : ");
-    	int y = scanner.nextInt();
-    	while ((y != 1) && (y != 2) && (y != 3) && (y != 4) && (y != 5) && (y != 6) && (y != 7) && (y != 8)) {
-    		System.out.print("Votre position y se situe en dehors du plateau, \n veuillez resaisir une position entre 1 et 8 !");
-    		y = scanner.nextInt();
+    	System.out.print("Parfait, veuillez saisir à présent une position y (a, b, c, d, e, f, g ou h)\n y : ");
+    	char y = scanner.next().charAt(0);
+    	while ((y != 'a') && (y != 'b') && (y != 'c') && (y != 'd') && (y != 'e') && (y != 'f') && (y != 'g') && (y != 'h')) {
+    		System.out.print("Votre position y se situe en dehors du plateau, \n veuillez resaisir une position entre a et h !");
+    		y = scanner.next().charAt(0);
     	}
     	
-    	Position pos = new Position(x,y);
-    	return pos;
+    	this.set_x(x-1);
+    	this.set_y(y);
     }
     
     
@@ -71,7 +92,7 @@ public class Position {
      * @param x
      * @return
      */
-    public int GetxByValue(char x) {
+    public int GetYByValue(char x) {
     	int resultat = 0;
     	
     	switch(x) {

@@ -52,7 +52,7 @@ public class Plateau {
     
     
     
-    /* JUSTE POUR TESTER LA METHODE INITIALISER (TEST REUSSI)
+    // JUSTE POUR TESTER LA METHODE INITIALISER (TEST REUSSI)
     public void AfficherPlateau() {
     	System.out.println("Affichage du plateau");
     	for (int i = plateau.length-1; i >= 0; i--) {
@@ -65,13 +65,13 @@ public class Plateau {
     					System.out.print("    "+plateau[i][j].toString()+"_"+plateau[i][j].get_couleur()+"_"+plateau[i][j].get_id());
     			}
     			else 
-    				System.out.print("                                       ");
-    			
+    				System.out.print("                ");
     		}
     		System.out.println("\n");
     	}
     }
-    */
+    
+    
     
     /**
      * Fonction qui va creer, initialiser et placer les pieces sur le plateau et dans les listes des pieces disponibles des deux joueurs
@@ -81,11 +81,14 @@ public class Plateau {
     	//Création et Placement des Pions Blancs
     	for (int j = 0; j < plateau.length; j++) {
     		plateau[1][j] = new Pion(Couleur.Blanc,j);
+    		JBlanc.AddPieceDispo(plateau[1][j]);
+    		
     	}
     	
     	//Création et Placement des Pions Noirs
     	for (int j = 0; j < plateau.length; j++) {
     		plateau[6][j] = new Pion(Couleur.Noir,j);
+    		JNoir.AddPieceDispo(plateau[6][j]);
     	}
     	
     	//Création et Placement des autres Pieces Blanches
@@ -98,6 +101,11 @@ public class Plateau {
     	plateau[0][6] = new Cavalier(Couleur.Blanc,1);
     	plateau[0][7] = new Tour(Couleur.Blanc,1);
     	
+    	//Mise à jour de la liste des pieces dispo du Joueur Blanc
+    	for (int i = 0; i < plateau.length; i++) {
+    		JBlanc.AddPieceDispo(plateau[0][i]);
+    	}
+    	
     	//Création et Placement des autres Pieces Noires
     	plateau[7][0] = new Tour(Couleur.Noir,0);
     	plateau[7][1] = new Cavalier(Couleur.Noir,0);
@@ -107,5 +115,10 @@ public class Plateau {
     	plateau[7][5] = new Fou(Couleur.Noir,1);
     	plateau[7][6] = new Cavalier(Couleur.Noir,1);
     	plateau[7][7] = new Tour(Couleur.Noir,1);
+    	
+    	//Mise à jour de la liste des pieces dispo du Joueur Noir
+    	for (int i = 0; i < plateau.length; i++) {
+    		JNoir.AddPieceDispo(plateau[7][i]);
+    	}
     }
 }

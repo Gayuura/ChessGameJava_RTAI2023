@@ -1,6 +1,7 @@
 package chessGameJava_RTAI2023;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Joueur {
 
@@ -27,6 +28,41 @@ public class Joueur {
     	this.couleur = couleur;
     }
 
+    
+    
+    /**
+     * Fonction getter de la liste PieceDispo
+     * @return
+     */
+    public ArrayList<Piece> get_PieceDispo(){
+    	return this.PieceDispo;
+    }
+    
+    
+    
+    /**
+     * Fonction getter de la liste PieceMangee
+     * @return
+     */
+    public ArrayList<Piece> get_PieceMangee(){
+    	return this.PieceMangee;
+    }
+    
+    
+    
+    /**
+     * Fonction qui va afficher une liste
+     */
+    public String AfficherList(ArrayList<Piece> liste) {
+    	String res = " ";
+		Iterator<Piece> l = liste.iterator();
+		while (l.hasNext()) {
+			res += l.next().getClass().getName() + " / ";
+		}
+		return res;
+	}
+    
+    
     
     
     /**
@@ -59,19 +95,22 @@ public class Joueur {
     
     
     
-    /**
-     * Fonction jouer() de la classe Joueur qui va verifier le chemin et la position d'arrivée sont possibles et puis fera le deplacement voulu de la piece
-     * @param pos_depart
-     * @param pos_arrivee
-     */
-    public void jouer(Plateau plateau, Boolean premTour, Position pos_depart, Position pos_arrivee) {
+/**
+ * Fonction jouer() de la classe Joueur qui va verifier le chemin et la position d'arrivée sont possibles et puis fera le deplacement voulu de la piece
+ * @param plateau
+ * @param premTour
+ * @param depart
+ * @param arrivee
+ * @return
+ */
+    public boolean jouer(Plateau plateau, Boolean premTour, Position depart, Position arrivee) {
     	boolean possible = false;
     	
     	//Récuperation des x et des y (version indice de matrice) de la position de depart et d'arrivée
-    	int xD = pos_depart.GetxByValue(pos_depart.get_x());
-    	int yD = pos_depart.get_y();
-    	int xA = pos_arrivee.GetxByValue(pos_arrivee.get_x());
-    	int yA = pos_arrivee.get_y();
+    	int xD = depart.get_x();
+    	int yD = depart.GetYByValue(depart.get_y());
+    	int xA = arrivee.get_x();
+    	int yA = arrivee.GetYByValue(arrivee.get_y());
     	Piece [][] aux = plateau.get_plateau();
     	
 
@@ -79,27 +118,27 @@ public class Joueur {
     	
     	switch(plateau.get_plateau()[xD][yD].toString()) {
     	case "Pion":
-    		possible = Pion.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),pos_depart,pos_arrivee);
+    		possible = Pion.PositionPossible(plateau,premTour,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
     		break;
     	case "Tour":
-    		possible = Tour.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),pos_depart,pos_arrivee);
+    		possible = Tour.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
     		break;
     	case "Fou":
-    		possible = Fou.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),pos_depart,pos_arrivee);
+    		possible = Fou.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
     		break;
     	case "Cavalier":
-    		possible = Cavalier.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),pos_depart,pos_arrivee);
+    		possible = Cavalier.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
     		break;
     	case "Reine":
-    		possible = Reine.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),pos_depart,pos_arrivee);
+    		possible = Reine.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
     		break;
     	case "Roi":
-    		possible = Roi.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),pos_depart,pos_arrivee);
+    		possible = Roi.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
     		break;
     	}
     	//Si la piece ne peut pas se deplacer a la position d'arrivée
     	if (!possible) {
-    		System.out.println("Votre "+plateau.get_plateau()[xD][yD].toString()+" "+plateau.get_plateau()[xD][yD].get_couleur()+" ne peut se deplacer a la position voulue !");
+    		System.out.println("Votre "+plateau.get_plateau()[xD][yD].toString()+" "+plateau.get_plateau()[xD][yD].get_couleur()+" ne peut se deplacer a la position voulue !\nVeuillez saisir une autre position pour le deplacement.");
     	}
     	//Sinon
     	else {
@@ -109,12 +148,14 @@ public class Joueur {
 	        	this.AddPieceMangee(plateau.get_plateau()[xA][yA]);
 	        	
 	        	//On la supprime de la liste des pieces disponibles
-	        	this.SuppPieceDispo(this.PieceDispo.indexOf(plateau.get_plateau()[xA][yA]));
+	        	//this.SuppPieceDispo(this.PieceDispo.indexOf(plateau.get_plateau()[xA][yA]));		//Probleme a regler
     		}
     		//On fait le deplacement de la piece vers la position d'arrivée
     		aux[xA][yA] = aux[xD][yD];
         	aux[xD][yD] = null;
         	plateau.set_plateau(aux);
     	}
+    	
+    	return possible;
     }
 }
