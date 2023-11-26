@@ -45,14 +45,77 @@ public class Tour extends Piece {
      * @param arrivee
      * @return
      */
-    public static boolean PositionPossible(Couleur couleur, Position depart, Position arrivee) {
+    public static boolean PositionPossible(Plateau plateau, Couleur couleur, Position depart, Position arrivee) {
     	
     	boolean possible = false;
+    	boolean aucunePiece = true;
+    	int i;
     	int xD = depart.get_x();
     	int yD = depart.GetYByValue(depart.get_y());
     	int xA = arrivee.get_x();
     	int yA = arrivee.GetYByValue(arrivee.get_y());
     	
-    	return true;
+    	if (plateau.estVide(plateau.get_plateau()[xA][yA]) || ((!plateau.estVide(plateau.get_plateau()[xA][yA]) && (plateau.get_plateau()[xA][yA].get_couleur() != couleur)))){
+	    	if (xA-xD == 0) {
+	    		//Verifie un deplacement horizontal vers la droite
+	    		if (yA-yD > 0) {
+	    			i = yD + 1;
+	    			while ((aucunePiece) && (i < yA)) {
+	    				if (!plateau.estVide(plateau.get_plateau()[xA][i])) {
+	    					aucunePiece = false;
+	    				}
+	    				i++;
+	    			}
+	    			if (aucunePiece) {
+	    				possible = true;
+	    			}
+	    		}
+	    		//Verifie un deplacement horizontal vers la gauche
+	    		else if (yA-yD < 0) {
+	    			i = yD - 1;
+	    			while ((aucunePiece) && (i > yA)) {
+	    				if (!plateau.estVide(plateau.get_plateau()[xA][i])) {
+	    					aucunePiece = false;
+	    				}
+	    				i--;
+	    			}
+	    			if (aucunePiece) {
+	    				possible = true;
+	    			}
+	    		}
+	    	}
+	    	
+	
+	    	else if (yA-yD == 0) {
+	    		//Verifie un deplacement vertical vers le haut
+	    		if (xA-xD > 0) {
+	    			i = xD + 1;
+	    			while ((aucunePiece) && (i < xA)) {
+	    				if (!plateau.estVide(plateau.get_plateau()[i][yA])) {
+	    					aucunePiece = false;
+	    				}
+	    				i++;
+	    			}
+	    			if (aucunePiece) {
+	    				possible = true;
+	    			}
+	    		}
+	    		//Verifie un deplacement vertical vers le bas
+	    		if (xA-xD < 0) {
+	    			i = xD - 1;
+	    			while ((aucunePiece) && (i > xA)) {
+	    				if (!plateau.estVide(plateau.get_plateau()[i][yA])) {
+	    					aucunePiece = false;
+	    				}
+	    				i--;
+	    			}
+	    			if (aucunePiece) {
+	    				possible = true;
+	    			}
+	    		}
+	    	}
+    	}
+    	
+    	return possible;
     }
 }

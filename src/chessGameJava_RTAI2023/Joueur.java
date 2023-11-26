@@ -131,7 +131,7 @@ public class Joueur {
     		possible = Pion.PositionPossible(plateau,Jeu.PionPremDepla(xD),plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
     		break;
     	case "Tour":
-    		possible = Tour.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
+    		possible = Tour.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
     		break;
     	case "Fou":
     		possible = Fou.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
@@ -148,7 +148,7 @@ public class Joueur {
     	}
     	//Si la piece ne peut pas se deplacer a la position d'arrivée
     	if (!possible) {
-    		System.out.println("Votre "+plateau.get_plateau()[xD][yD].toString()+" "+plateau.get_plateau()[xD][yD].get_couleur()+" ne peut pas se deplacer a la position voulue !\nVeuillez saisir une autre position pour le deplacement.");
+    		System.out.println("Votre "+plateau.get_plateau()[xD][yD].toString()+" "+plateau.get_plateau()[xD][yD].get_couleur()+" ne peut pas se deplacer a la position voulue !\nVeuillez resaisir les positions pour le deplacement.");
     	}
     	//Sinon
     	else {

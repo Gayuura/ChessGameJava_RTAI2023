@@ -56,6 +56,7 @@ public class Plateau {
     public void AfficherPlateau() {
     	System.out.println("Affichage du plateau\n");
     	for (int i = plateau.length-1; i >= 0; i--) {
+    		System.out.print(i+1);
     		for (int j = 0; j < plateau.length; j++) {
     			if (!estVide(plateau[i][j])) {
     				if ((plateau[i][j].getClass().getName().contains("Reine")) || (plateau[i][j].getClass().getName().contains("Roi"))){

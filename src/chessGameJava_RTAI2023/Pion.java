@@ -63,8 +63,8 @@ public class Pion extends Piece {
     		}
     		//S'il avance tout droit de 2 cases
     		if (PionPremDepla) {
-	    		if ((xA-xD == 2) && (xD == 1) && (yA-yD == 0)) {
-	    			if (plateau.estVide(plateau.get_plateau()[xA][yA-1])) {
+	    		if ((xA-xD == 2) && (yA-yD == 0)) {
+	    			if (plateau.estVide(plateau.get_plateau()[xA-1][yA])) {
 	    				possible = true;
 	    			}
 	    			if (plateau.estVide(plateau.get_plateau()[xA][yA])) {
