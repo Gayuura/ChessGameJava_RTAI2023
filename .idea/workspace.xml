@@ -5,45 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7e6500c-ac38-4de0-bd79-4356fee813e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/b_bishop_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/b_king_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/b_knight_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/b_pawn_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/b_queen_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/b_rook_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/square brown dark_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/square brown light_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/square gray dark _png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/square gray light _png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/w_bishop_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/w_king_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/w_knight_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/w_pawn_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/w_queen_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/assets/w_rook_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/JPanelPlateau$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/b_bishop_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/b_king_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/b_knight_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/b_pawn_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/b_queen_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/b_rook_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/square brown dark_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/square brown light_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/square gray dark _png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/square gray light _png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/w_bishop_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/w_king_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/w_knight_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/w_pawn_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/w_queen_png_shadow_1024px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/w_rook_png_shadow_1024px.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/JPanelPlateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/JPanelPlateau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +81,8 @@
       <workItem from="1700836288687" duration="8547000" />
       <workItem from="1700929760892" duration="579000" />
       <workItem from="1700931957770" duration="684000" />
-      <workItem from="1701000406925" duration="8398000" />
+      <workItem from="1701000406925" duration="8541000" />
+      <workItem from="1701013153169" duration="652000" />
     </task>
     <servers />
   </component>
