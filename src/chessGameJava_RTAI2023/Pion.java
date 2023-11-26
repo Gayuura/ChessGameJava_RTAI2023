@@ -45,7 +45,7 @@ public class Pion extends Piece {
      * @param arrivee
      * @return
      */
-    public static boolean PositionPossible(Plateau plateau, Boolean premTour, Couleur couleur, Position depart, Position arrivee) {
+    public static boolean PositionPossible(Plateau plateau, Boolean PionPremDepla, Couleur couleur, Position depart, Position arrivee) {
     	
     	boolean possible = false;
     	int xD = depart.get_x();
@@ -62,7 +62,7 @@ public class Pion extends Piece {
     			}
     		}
     		//S'il avance tout droit de 2 cases
-    		if (premTour) {
+    		if (PionPremDepla) {
 	    		if ((xA-xD == 2) && (xD == 1) && (yA-yD == 0)) {
 	    			if (plateau.estVide(plateau.get_plateau()[xA][yA-1])) {
 	    				possible = true;

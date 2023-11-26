@@ -14,7 +14,7 @@ public class Joueur {
     private ArrayList<Piece> PieceDispo = new ArrayList<Piece>();
     
     //Liste des pieces qui ont été mangé
-    private ArrayList<Piece> PieceMangee = new ArrayList<Piece>();
+    private ArrayList<Piece> PieceMorte = new ArrayList<Piece>();
     
     
     
@@ -31,6 +31,16 @@ public class Joueur {
     
     
     /**
+     * Fonction getter pour l'attribut couleur
+     * @return
+     */
+    public Couleur get_couleur() {
+    	return this.couleur;
+    }
+    
+    
+    
+    /**
      * Fonction getter de la liste PieceDispo
      * @return
      */
@@ -44,8 +54,8 @@ public class Joueur {
      * Fonction getter de la liste PieceMangee
      * @return
      */
-    public ArrayList<Piece> get_PieceMangee(){
-    	return this.PieceMangee;
+    public ArrayList<Piece> get_PieceMorte(){
+    	return this.PieceMorte;
     }
     
     
@@ -79,8 +89,8 @@ public class Joueur {
      * Fonction qui permet d'ajouter une piece a la liste "PieceMangee"
      * @param piece
      */
-    public void AddPieceMangee(Piece piece) {
-    	this.PieceMangee.add(piece);
+    public void AddPieceMorte(Piece piece) {
+    	this.PieceMorte.add(piece);
     }
     
     
@@ -89,21 +99,21 @@ public class Joueur {
      * Fonction qui supprime la piece de la liste des pieces disponibles
      * @param piece
      */
-    public void SuppPieceDispo(int index) {
-    	this.PieceDispo.remove(index);
+    public void SuppPieceDispo(Piece piece) {
+    	this.PieceDispo.remove(piece);
     }
     
     
     
-/**
- * Fonction jouer() de la classe Joueur qui va verifier le chemin et la position d'arrivée sont possibles et puis fera le deplacement voulu de la piece
- * @param plateau
- * @param premTour
- * @param depart
- * @param arrivee
- * @return
- */
-    public boolean jouer(Plateau plateau, Boolean premTour, Position depart, Position arrivee) {
+	/**
+	 * Fonction jouer() de la classe Joueur qui va verifier le chemin et la position d'arrivée sont possibles et puis fera le deplacement voulu de la piece
+	 * @param plateau
+	 * @param premTour
+	 * @param depart
+	 * @param arrivee
+	 * @return
+	 */
+    public boolean jouer(Plateau plateau, Joueur JAdverse, Position depart, Position arrivee) {
     	boolean possible = false;
     	
     	//Récuperation des x et des y (version indice de matrice) de la position de depart et d'arrivée
@@ -118,7 +128,7 @@ public class Joueur {
     	
     	switch(plateau.get_plateau()[xD][yD].toString()) {
     	case "Pion":
-    		possible = Pion.PositionPossible(plateau,premTour,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
+    		possible = Pion.PositionPossible(plateau,Jeu.PionPremDepla(xD),plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
     		break;
     	case "Tour":
     		possible = Tour.PositionPossible(plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
@@ -138,17 +148,17 @@ public class Joueur {
     	}
     	//Si la piece ne peut pas se deplacer a la position d'arrivée
     	if (!possible) {
-    		System.out.println("Votre "+plateau.get_plateau()[xD][yD].toString()+" "+plateau.get_plateau()[xD][yD].get_couleur()+" ne peut se deplacer a la position voulue !\nVeuillez saisir une autre position pour le deplacement.");
+    		System.out.println("Votre "+plateau.get_plateau()[xD][yD].toString()+" "+plateau.get_plateau()[xD][yD].get_couleur()+" ne peut pas se deplacer a la position voulue !\nVeuillez saisir une autre position pour le deplacement.");
     	}
     	//Sinon
     	else {
     		//Si la case d'arrivée n'est pas vide
     		if (!(plateau.estVide(plateau.get_plateau()[xA][yA]))){
 	        	//On l'ajoute a la liste des pieces mangée
-	        	this.AddPieceMangee(plateau.get_plateau()[xA][yA]);
+	        	JAdverse.AddPieceMorte(plateau.get_plateau()[xA][yA]);
 	        	
 	        	//On la supprime de la liste des pieces disponibles
-	        	//this.SuppPieceDispo(this.PieceDispo.indexOf(plateau.get_plateau()[xA][yA]));		//Probleme a regler
+	        	JAdverse.SuppPieceDispo(plateau.get_plateau()[xA][yA]);
     		}
     		//On fait le deplacement de la piece vers la position d'arrivée
     		aux[xA][yA] = aux[xD][yD];

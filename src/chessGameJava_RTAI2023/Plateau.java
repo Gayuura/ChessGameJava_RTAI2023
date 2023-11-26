@@ -54,7 +54,7 @@ public class Plateau {
     
     // JUSTE POUR TESTER LA METHODE INITIALISER (TEST REUSSI)
     public void AfficherPlateau() {
-    	System.out.println("Affichage du plateau");
+    	System.out.println("Affichage du plateau\n");
     	for (int i = plateau.length-1; i >= 0; i--) {
     		for (int j = 0; j < plateau.length; j++) {
     			if (!estVide(plateau[i][j])) {

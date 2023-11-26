@@ -48,7 +48,10 @@ public class Tour extends Piece {
     public static boolean PositionPossible(Couleur couleur, Position depart, Position arrivee) {
     	
     	boolean possible = false;
-    	
+    	int xD = depart.get_x();
+    	int yD = depart.GetYByValue(depart.get_y());
+    	int xA = arrivee.get_x();
+    	int yA = arrivee.GetYByValue(arrivee.get_y());
     	
     	return true;
     }
