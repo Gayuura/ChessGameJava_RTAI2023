@@ -21,10 +21,34 @@ public class Jeu implements InterJeu{
     
     
     /**
-     * Fonction qui verifiera si la partie est terminé
+     * Fonction qui verifie s'il y'a un echec a la position donnée en parametre
+     * @param plateau
+     * @param i
+     * @param y
      * @return
      */
-    public boolean echec_math() {
-    	return true;
+    public static boolean echec(Plateau plateau, int x, int y) {
+    	return false;
+    }
+    
+    
+    
+    /**
+     * Fonction qui verifiera s'il y'a echec et math
+     * @param plateau
+     * @param PosRoi
+     * @return
+     */
+    public boolean echec_math(Plateau plateau, Position PosRoi) {
+    	
+    	boolean Termine = false;
+    	int x = PosRoi.get_x();
+    	int y = PosRoi.GetYByValue(PosRoi.get_y());
+    	
+    	if ((this.echec(plateau, x+1, y)) &&  (this.echec(plateau, x-1, y)) && (this.echec(plateau, x, y+1)) && (this.echec(plateau, x, y-1))) {
+    		Termine = true;
+    	}
+    	
+    	return Termine;
     }
 }

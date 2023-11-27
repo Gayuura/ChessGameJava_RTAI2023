@@ -18,7 +18,7 @@ public class Main {
         plateau.initialiser();
         plateau.AfficherPlateau(); //JUSTE POUR TESTER LA METHODE INITIALISER (TEST REUSSI)
 
-        JPanelPlateau GuiPlateau = new JPanelPlateau();
+        //JPanelPlateau GuiPlateau = new JPanelPlateau();
 
 
 
@@ -30,7 +30,7 @@ public class Main {
         
         
         
-        for (int i = 0; i < 30; i++) {
+        /*for (int i = 0; i < 30; i++) {
         	if (i % 2 == 0) {
                 System.out.println("Que le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
                 pos_depart.DemanderPosDepart(JBlanc,plateau);
@@ -61,7 +61,18 @@ public class Main {
                 System.out.println("Voici la liste des pieces mortes du Joueur Noir :");
                 System.out.println(JBlanc.AfficherList(JBlanc.get_PieceMorte())+"\n");
         	}
+        }*/
+        
+        for (int i = 0; i < 30; i++) {
+        	System.out.println("Que le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
+            pos_depart.DemanderPosDepart(JBlanc,plateau);
+            System.out.println("Que le Joueur Blanc donne la position ou il veut mettre sa piece\n");
+            pos_arrivee.DemanderPosArrivee(JBlanc,plateau);
+            while (!(JBlanc.jouer(plateau,JNoir,pos_depart,pos_arrivee))) {
+            	pos_depart.DemanderPosDepart(JBlanc,plateau);
+            	pos_arrivee.DemanderPosArrivee(JBlanc,plateau);
+            }
+            plateau.AfficherPlateau();
         }
-
     }
 }

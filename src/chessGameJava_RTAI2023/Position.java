@@ -105,7 +105,7 @@ public class Position {
     	while(!MaPiece) {
 
 
-			JOptionPane.showMessageDialog(new JFrame(), "Veuillez saisir une position x entre 1 et 8 !\n x : ");
+			System.out.print("Veuillez saisir une position x entre 1 et 8 !\n x : ");
 	    	x = scanner.nextInt();
 		    while ((x > 8) || (x < 1)) {
 		    	System.out.print("Votre position x se situe en dehors du plateau, \n veuillez resaisir une position entre 1 et 8 !\n x : ");

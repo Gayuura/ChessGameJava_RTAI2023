@@ -49,8 +49,23 @@ public class Cavalier extends Piece {
     public static boolean PositionPossible(Plateau plateau, Couleur couleur, Position depart, Position arrivee) {
     	
     	boolean possible = false;
+    	int xD = depart.get_x();
+    	int yD = depart.GetYByValue(depart.get_y());
+    	int xA = arrivee.get_x();
+    	int yA = arrivee.GetYByValue(arrivee.get_y());
     	
+    	if (plateau.estVide(plateau.get_plateau()[xA][yA]) || ((!plateau.estVide(plateau.get_plateau()[xA][yA]) && (plateau.get_plateau()[xA][yA].get_couleur() != couleur)))){
+    		//Verifie le deplacement en L (2 cases puis 1 case)
+    		if ((Math.abs(xA - xD) == 2) && Math.abs(yA - yD) == 1) {
+    			possible = true;
+    		}
+    		
+    		//Verifie le deplacement en L (1 case puis 2 cases)
+    		if ((Math.abs(xA - xD) == 1) && Math.abs(yA - yD) == 2) {
+    			possible = true;
+    		}
+    	}
     	
-    	return true;
+    	return possible;
     }
 }

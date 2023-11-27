@@ -124,46 +124,57 @@ public class Joueur {
     	Piece [][] aux = plateau.get_plateau();
     	
 
-    	//Récuperation du type de la piece qu'on souhaite deplacer
-    	
-    	switch(plateau.get_plateau()[xD][yD].toString()) {
-    	case "Pion":
-    		possible = Pion.PositionPossible(plateau,Jeu.PionPremDepla(xD),plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
-    		break;
-    	case "Tour":
-    		possible = Tour.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
-    		break;
-    	case "Fou":
-    		possible = Fou.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
-    		break;
-    	case "Cavalier":
-    		possible = Cavalier.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
-    		break;
-    	case "Reine":
-    		possible = Reine.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
-    		break;
-    	case "Roi":
-    		possible = Roi.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
-    		break;
-    	}
-    	//Si la piece ne peut pas se deplacer a la position d'arrivée
-    	if (!possible) {
-    		System.out.println("Votre "+plateau.get_plateau()[xD][yD].toString()+" "+plateau.get_plateau()[xD][yD].get_couleur()+" ne peut pas se deplacer a la position voulue !\nVeuillez resaisir les positions pour le deplacement.");
-    	}
-    	//Sinon
-    	else {
-    		//Si la case d'arrivée n'est pas vide
-    		if (!(plateau.estVide(plateau.get_plateau()[xA][yA]))){
-	        	//On l'ajoute a la liste des pieces mangée
-	        	JAdverse.AddPieceMorte(plateau.get_plateau()[xA][yA]);
-	        	
-	        	//On la supprime de la liste des pieces disponibles
-	        	JAdverse.SuppPieceDispo(plateau.get_plateau()[xA][yA]);
+    	if ((!plateau.estVide(plateau.get_plateau()[xA][yA])) && (plateau.get_plateau()[xD][yD].toString() == "Roi") && (plateau.get_plateau()[xA][yA].toString() == "Tour")) {
+    		if (aux == Roi.RegleRoque(plateau, depart, arrivee)) {
+    			System.out.println("La regle Roque ne s'applique pas ici !");
     		}
-    		//On fait le deplacement de la piece vers la position d'arrivée
-    		aux[xA][yA] = aux[xD][yD];
-        	aux[xD][yD] = null;
-        	plateau.set_plateau(aux);
+    		else {
+    			possible = true;
+    		}
+    	}
+    	else {
+    		
+	    	//Récuperation du type de la piece qu'on souhaite deplacer
+	    	switch(plateau.get_plateau()[xD][yD].toString()) {
+	    	case "Pion":
+	    		possible = Pion.PositionPossible(plateau,Jeu.PionPremDepla(xD),plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
+	    		break;
+	    	case "Tour":
+	    		possible = Tour.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
+	    		break;
+	    	case "Fou":
+	    		possible = Fou.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
+	    		break;
+	    	case "Cavalier":
+	    		possible = Cavalier.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
+	    		break;
+	    	case "Reine":
+	    		possible = Reine.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
+	    		break;
+	    	case "Roi":
+	    		possible = Roi.PositionPossible(plateau,plateau.get_plateau()[xD][yD].get_couleur(),depart,arrivee);
+	    		break;
+	    	}
+	    	//Si la piece ne peut pas se deplacer a la position d'arrivée
+	    	
+	    	if (!possible) {
+	    			System.out.println("Votre "+plateau.get_plateau()[xD][yD].toString()+" "+plateau.get_plateau()[xD][yD].get_couleur()+" ne peut pas se deplacer a la position voulue !\nVeuillez resaisir les positions pour le deplacement.");
+	    	}
+	    	//Sinon
+	    	else {
+	    		//Si la case d'arrivée n'est pas vide
+	    		if (!(plateau.estVide(plateau.get_plateau()[xA][yA]))){
+		        	//On l'ajoute a la liste des pieces mangée
+		        	JAdverse.AddPieceMorte(plateau.get_plateau()[xA][yA]);
+		        	
+		        	//On la supprime de la liste des pieces disponibles
+		        	JAdverse.SuppPieceDispo(plateau.get_plateau()[xA][yA]);
+	    		}
+	    		//On fait le deplacement de la piece vers la position d'arrivée
+	    		aux[xA][yA] = aux[xD][yD];
+	        	aux[xD][yD] = null;
+	        	plateau.set_plateau(aux);
+	    	}
     	}
     	
     	return possible;
