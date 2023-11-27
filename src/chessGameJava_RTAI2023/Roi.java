@@ -31,10 +31,9 @@ public class Roi extends Piece {
      * @param arrivee
      * @return
      */
-    public static Piece [][] RegleRoque(Plateau plateau, Position depart, Position arrivee) {
+    public static boolean RegleRoque(Plateau plateau, Position depart, Position arrivee) {
 
     	boolean Vide = true;
-    	Piece [][] aux = plateau.get_plateau();
     	int xD = depart.get_x();
     	int yD = depart.GetYByValue(depart.get_y());
     	int xA = arrivee.get_x();
@@ -49,12 +48,6 @@ public class Roi extends Piece {
     					Vide = false;
     				}
     			}
-    			if (Vide = true) {
-    				aux[xD][yA-1] = aux[xD][yD];
-    				aux[xD][yD] = null;
-    				aux[xD][yD+1] = aux[xA][yA];
-    				aux[xA][yA] = null;
-    			}
     		}
     		//Si la position d'arrivee concerne la Tour Blanche à gauche
     		else if ((xA == 0) && (yA == 0) && (plateau.get_plateau()[xA][yA].getClass().getName().contains("Tour"))) {
@@ -62,12 +55,6 @@ public class Roi extends Piece {
     				if (!plateau.estVide(plateau.get_plateau()[xD][i])) {
     					Vide = false;
     				}
-    			}
-    			if (Vide = true) {
-    				aux[xD][yD-2] = aux[xD][yD];
-    				aux[xD][yD] = null;
-    				aux[xD][yD-1] = aux[xA][yA];
-    				aux[xA][yA] = null;
     			}
     		}
     	}
@@ -80,12 +67,6 @@ public class Roi extends Piece {
     					Vide = false;
     				}
     			}
-    			if (Vide = true) {
-    				aux[xD][yA-1] = aux[xD][yD];
-    				aux[xD][yD] = null;
-    				aux[xD][yD+1] = aux[xA][yA];
-    				aux[xA][yA] = null;
-    			}
     		}
     		//Si la position d'arrivee concerne la Tour Noire à gauche
     		else if ((xA == 7) && (yA == 0) && (plateau.get_plateau()[xA][yA].getClass().getName().contains("Tour"))) {
@@ -94,16 +75,10 @@ public class Roi extends Piece {
     					Vide = false;
     				}
     			}
-    			if (Vide = true) {
-    				aux[xD][yD-2] = aux[xD][yD];
-    				aux[xD][yD] = null;
-    				aux[xD][yD-1] = aux[xA][yA];
-    				aux[xA][yA] = null;
-    			}
     		}
     	}
     	
-    	return aux;
+    	return Vide;
     }
     
     

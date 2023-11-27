@@ -123,12 +123,47 @@ public class Joueur {
     	int yA = arrivee.GetYByValue(arrivee.get_y());
     	Piece [][] aux = plateau.get_plateau();
     	
-
+    	//On verifie si la regle Roque est demandée
     	if ((!plateau.estVide(plateau.get_plateau()[xA][yA])) && (plateau.get_plateau()[xD][yD].toString() == "Roi") && (plateau.get_plateau()[xA][yA].toString() == "Tour")) {
-    		if (aux == Roi.RegleRoque(plateau, depart, arrivee)) {
+    		if (!Roi.RegleRoque(plateau, depart, arrivee)) {
     			System.out.println("La regle Roque ne s'applique pas ici !");
     		}
     		else {
+    			//Si la position de depart concerne le Roi Blanc
+    			if ((xD == 0) && (yD == 4)) {
+    				//Si la position d'arrivee concerne la Tour Blanche à droite
+    				if ((xA == 0) && (yA == 7)) {
+    					aux[xD][yA-1] = aux[xD][yD];
+        				aux[xD][yD] = null;
+        				aux[xD][yD+1] = aux[xA][yA];
+        				aux[xA][yA] = null;
+    				}
+    				//Si la position d'arrivee concerne la Tour Blanche à 
+    				else if ((xA == 0) && (yA == 0)) {
+    					aux[xD][yD-2] = aux[xD][yD];
+        				aux[xD][yD] = null;
+        				aux[xD][yD-1] = aux[xA][yA];
+        				aux[xA][yA] = null;
+    				}
+    			}
+    			////Si la position de depart concerne le Roi Noir
+    			else if ((xD == 7) && (yD == 4)) {
+    				//Si la position d'arrivee concerne la Tour Noire à droite
+    				if ((xA == 7) && (yA == 7)){
+    					aux[xD][yA-1] = aux[xD][yD];
+        				aux[xD][yD] = null;
+        				aux[xD][yD+1] = aux[xA][yA];
+        				aux[xA][yA] = null;
+    				}
+    				//Si la position d'arrivee concerne la Tour Noire à gauche
+    				else if ((xA == 7) && (yA == 0)) {
+    					aux[xD][yD-2] = aux[xD][yD];
+        				aux[xD][yD] = null;
+        				aux[xD][yD-1] = aux[xA][yA];
+        				aux[xA][yA] = null;
+    				}
+    			}
+    			
     			possible = true;
     		}
     	}
@@ -173,10 +208,10 @@ public class Joueur {
 	    		//On fait le deplacement de la piece vers la position d'arrivée
 	    		aux[xA][yA] = aux[xD][yD];
 	        	aux[xD][yD] = null;
-	        	plateau.set_plateau(aux);
 	    	}
     	}
     	
+    	plateau.set_plateau(aux);
     	return possible;
     }
 }

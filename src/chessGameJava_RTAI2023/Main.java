@@ -30,7 +30,7 @@ public class Main {
         
         
         
-        /*for (int i = 0; i < 30; i++) {
+        for (int i = 0; i < 30; i++) {
         	if (i % 2 == 0) {
                 System.out.println("Que le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
                 pos_depart.DemanderPosDepart(JBlanc,plateau);
@@ -58,12 +58,12 @@ public class Main {
                 plateau.AfficherPlateau();
                 System.out.println("Voici la liste des pieces dispo du Joueur Blanc :");
                 System.out.println(JBlanc.AfficherList(JBlanc.get_PieceDispo())+"\n");
-                System.out.println("Voici la liste des pieces mortes du Joueur Noir :");
+                System.out.println("Voici la liste des pieces mortes du Joueur Blanc :");
                 System.out.println(JBlanc.AfficherList(JBlanc.get_PieceMorte())+"\n");
         	}
-        }*/
+        }
         
-        for (int i = 0; i < 30; i++) {
+        /*for (int i = 0; i < 30; i++) {
         	System.out.println("Que le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
             pos_depart.DemanderPosDepart(JBlanc,plateau);
             System.out.println("Que le Joueur Blanc donne la position ou il veut mettre sa piece\n");
@@ -73,6 +73,6 @@ public class Main {
             	pos_arrivee.DemanderPosArrivee(JBlanc,plateau);
             }
             plateau.AfficherPlateau();
-        }
+        }*/
     }
 }
