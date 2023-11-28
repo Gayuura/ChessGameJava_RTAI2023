@@ -122,4 +122,48 @@ public class JPanelPlateau extends JPanel{
         }
         return null;
     }
+
+    /**
+     * Fonction lireMatrice() qui permet le lire la matrice du plateau au niveau de l'interface graphique
+     */
+    public void lireMatrice(Piece[][] plateau) {
+        // On supprime le contenu actuel du damier
+        leDamier.removeAll();
+
+        // On ajoute les nouveaux boutons en fonction de la matrice du plateau
+        for (int i = 0; i < plateau.length; i++) {
+            for (int j = 0; j < plateau[i].length; j++) {
+                JButton btn = new JButton();
+
+                // On configure le bouton en fonction de la pièce présente sur la case
+                if (plateau[i][j] != null) {
+                    setImgInButton(btn, plateau[i][j].getClass().getSimpleName(), plateau[i][j].get_couleur());
+                }
+
+                btn.putClientProperty("idX", i);
+                btn.putClientProperty("idY", j);
+
+                if ((i + j) % 2 == 0)
+                    btn.setBackground(Color.WHITE);
+                else
+                    btn.setBackground(Color.BLACK);
+
+                // On ajoute un ActionListener pour gérer les clics sur les boutons
+                btn.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        JButton btn = (JButton) e.getSource();
+                        int idX = (int) btn.getClientProperty("idX");
+                        int idY = (int) btn.getClientProperty("idY");
+                        System.out.println("idX = " + idX + " idY = " + idY);
+                    }
+                });
+
+                leDamier.add(btn);
+            }
+        }
+        // On met à jour l'affichage
+        leDamier.revalidate();
+        leDamier.repaint();
+    }
 }
