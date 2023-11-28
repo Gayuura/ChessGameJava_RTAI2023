@@ -18,7 +18,11 @@ public class Main {
         plateau.initialiser();
         plateau.AfficherPlateau(); //JUSTE POUR TESTER LA METHODE INITIALISER (TEST REUSSI)
 
-        //JPanelPlateau GuiPlateau = new JPanelPlateau();
+        // JPanelPlateau GuiPlateau = new JPanelPlateau();
+
+        // Test de la fonction lireMatrice() pour afficher le plateau avec ses pièces au départ
+        JPanelPlateau jPanelPlateau = new JPanelPlateau();
+        jPanelPlateau.lireMatrice(plateau.get_plateau());
 
 
 
