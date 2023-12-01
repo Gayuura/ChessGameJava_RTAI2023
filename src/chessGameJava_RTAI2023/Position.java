@@ -1,6 +1,5 @@
 package chessGameJava_RTAI2023;
 
-import javax.swing.*;
 import java.util.Scanner;
 public class Position {
     private int x;
@@ -92,11 +91,13 @@ public class Position {
     
     
     /**
-     * Fonction qui demande la position de depart et verifie si la position est comprise dans le plateau
-     * @param J
-     * @param plateau
-     */
-    public void DemanderPosDepart(Joueur J, Plateau plateau) {
+	 * Fonction qui demande la position de depart et verifie si la position est comprise dans le plateau
+	 *
+	 * @param J
+	 * @param plateau
+	 * @param jPanelPlateau
+	 */
+    public void DemanderPosDepart(Joueur J, Plateau plateau, JPanelPlateau jPanelPlateau) {
 
     	
     	boolean MaPiece = false;
@@ -105,8 +106,11 @@ public class Position {
     	while(!MaPiece) {
 
 
+//			JPanelPlateau.afficherMessage("Veuillez saisir une position x entre 1 et 8 !\n x : ");
+			jPanelPlateau.click();
 			System.out.print("Veuillez saisir une position x entre 1 et 8 !\n x : ");
-	    	x = scanner.nextInt();
+	    	x = jPanelPlateau.getIdX();
+			System.out.print(x);
 		    while ((x > 8) || (x < 1)) {
 		    	System.out.print("Votre position x se situe en dehors du plateau, \n veuillez resaisir une position entre 1 et 8 !\n x : ");
 		    	x = scanner.nextInt();

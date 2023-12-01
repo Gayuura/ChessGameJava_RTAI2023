@@ -1,8 +1,5 @@
 package chessGameJava_RTAI2023;
 
-import java.util.Arrays;
-import javax.swing.*;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -16,13 +13,29 @@ public class Main {
     	
     	
         plateau.initialiser();
+
+        Piece[][] test = plateau.get_plateau();
+        test[0][0] = null;
+        test[1][0] = null;
+        test[0][1] = null;
+        test[1][1] = null;
+        test[1][0] = new Pion(Couleur.Noir, 10);
+        plateau.set_plateau(test);
+
         plateau.AfficherPlateau(); //JUSTE POUR TESTER LA METHODE INITIALISER (TEST REUSSI)
 
-        // JPanelPlateau GuiPlateau = new JPanelPlateau();
+//         JPanelPlateau GuiPlateau = new JPanelPlateau();
+//        JPanelPromotion GuiPromotion = new JPanelPromotion();
 
         // Test de la fonction lireMatrice() pour afficher le plateau avec ses pièces au départ
         JPanelPlateau jPanelPlateau = new JPanelPlateau();
         jPanelPlateau.lireMatrice(plateau.get_plateau());
+
+
+
+
+
+
 
 
 
@@ -37,11 +50,11 @@ public class Main {
         for (int i = 0; i < 30; i++) {
         	if (i % 2 == 0) {
                 System.out.println("Que le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
-                pos_depart.DemanderPosDepart(JBlanc,plateau);
+                pos_depart.DemanderPosDepart(JBlanc,plateau, jPanelPlateau);
                 System.out.println("Que le Joueur Blanc donne la position ou il veut mettre sa piece\n");
                 pos_arrivee.DemanderPosArrivee(JBlanc,plateau);
                 while (!(JBlanc.jouer(plateau,JNoir,pos_depart,pos_arrivee))) {
-                	pos_depart.DemanderPosDepart(JBlanc,plateau);
+                	pos_depart.DemanderPosDepart(JBlanc,plateau, jPanelPlateau);
                 	pos_arrivee.DemanderPosArrivee(JBlanc,plateau);
                 }
                 plateau.AfficherPlateau();
@@ -52,11 +65,11 @@ public class Main {
         	}
         	else {
                 System.out.println("Que le Joueur Noir donne la position de la piece qu'il veut deplacer\n");
-                pos_depart.DemanderPosDepart(JNoir,plateau);
+                pos_depart.DemanderPosDepart(JNoir,plateau, jPanelPlateau);
                 System.out.println("Que le Joueur Noir donne la position ou il veut mettre sa piece\n");
                 pos_arrivee.DemanderPosArrivee(JNoir,plateau);
                 while (!(JNoir.jouer(plateau,JBlanc,pos_depart,pos_arrivee))) {
-                	pos_depart.DemanderPosDepart(JNoir,plateau);
+                	pos_depart.DemanderPosDepart(JNoir,plateau, jPanelPlateau);
                 	pos_arrivee.DemanderPosArrivee(JNoir,plateau);
                 }
                 plateau.AfficherPlateau();

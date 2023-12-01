@@ -36,7 +36,9 @@ public class Plateau {
     	this.plateau = plateau;
     }
     
-    
+    public void set_Piece(Piece p, int x, int y) {
+		this.plateau[x][y] = p;
+	}
     
     /**
      * Fonction qui verifie si une case est vide
@@ -96,7 +98,7 @@ public class Plateau {
     	plateau[0][0] = new Tour(Couleur.Blanc,0);
     	plateau[0][1] = new Cavalier(Couleur.Blanc,0);
     	plateau[0][2] = new Fou(Couleur.Blanc,0);
-    	plateau[0][3] = new Reine(Couleur.Blanc);
+    	plateau[0][3] = new Reine(Couleur.Blanc,0);
     	plateau[0][4] = new Roi(Couleur.Blanc);
     	plateau[0][5] = new Fou(Couleur.Blanc,1);
     	plateau[0][6] = new Cavalier(Couleur.Blanc,1);
@@ -111,7 +113,7 @@ public class Plateau {
     	plateau[7][0] = new Tour(Couleur.Noir,0);
     	plateau[7][1] = new Cavalier(Couleur.Noir,0);
     	plateau[7][2] = new Fou(Couleur.Noir,0);
-    	plateau[7][3] = new Reine(Couleur.Noir);
+    	plateau[7][3] = new Reine(Couleur.Noir,0);
     	plateau[7][4] = new Roi(Couleur.Noir);
     	plateau[7][5] = new Fou(Couleur.Noir,1);
     	plateau[7][6] = new Cavalier(Couleur.Noir,1);

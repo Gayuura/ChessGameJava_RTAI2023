@@ -5,7 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7e6500c-ac38-4de0-bd79-4356fee813e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPromotion.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPromotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Cavalier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Cavalier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Fou.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Fou.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/InterJeu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/InterJeu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/JPanelPlateau$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/JPanelPlateau$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/JPanelPlateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/JPanelPlateau.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Jeu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Jeu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Joueur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Pion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Pion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Plateau.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Position.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Reine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Reine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Roi.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Roi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Tour.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Tour.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Jeu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Joueur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Pion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Pion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Plateau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Reine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Reine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +74,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -83,10 +109,28 @@
       <workItem from="1700931957770" duration="684000" />
       <workItem from="1701000406925" duration="8541000" />
       <workItem from="1701013153169" duration="652000" />
+      <workItem from="1701209943852" duration="2308000" />
+      <workItem from="1701284043772" duration="6062000" />
+      <workItem from="1701423591820" duration="1000" />
+      <workItem from="1701435996995" duration="275000" />
+      <workItem from="1701436287609" duration="91000" />
+      <workItem from="1701436388920" duration="1572000" />
+      <workItem from="1701437994466" duration="9339000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

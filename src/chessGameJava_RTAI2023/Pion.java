@@ -101,6 +101,7 @@ public class Pion extends Piece {
     			}
     		}
     	}
+		Jeu.promotionPion(plateau, depart, arrivee, couleur);
     	
     	return possible;
     }

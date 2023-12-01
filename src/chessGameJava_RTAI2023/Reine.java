@@ -2,14 +2,15 @@ package chessGameJava_RTAI2023;
 
 public class Reine extends Piece {
 
-	
+    private int id;
 	
     /**
      * Constructeur de la classe Reine
      * @param c
      */
-    public Reine(Couleur c) {
+    public Reine(Couleur c, int id) {
         super(c);
+        this.id = id;
     }
     
     

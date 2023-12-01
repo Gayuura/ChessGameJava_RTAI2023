@@ -1,6 +1,5 @@
 package chessGameJava_RTAI2023;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,8 +8,15 @@ import java.awt.event.ActionListener;
 public class JPanelPlateau extends JPanel{
     private JPanel lePlateau;
     private JPanel leDamier;
+    private Boolean enAttente = false;
+    private int idX;
+    private int idY;
+
 
     public JPanelPlateau() {
+
+
+
 //        lePlateau.setLayout(new GridLayout(8,8));
         leDamier.setLayout(new GridLayout(8,8));
         setButton(leDamier);
@@ -21,6 +27,14 @@ public class JPanelPlateau extends JPanel{
         frame.setSize(750,750);
         frame.setResizable(false);
         frame.setVisible(true);
+    }
+
+    public int getIdX() {
+        return idX;
+    }
+
+    public int getIdY() {
+        return idY;
     }
 
     /**
@@ -43,7 +57,7 @@ public class JPanelPlateau extends JPanel{
 
 
                 //Défini l'image du bouton
-                setImgInButton(btn, "Tour", Couleur.Noir);
+                setImgInButton(btn, "", Couleur.Noir);
 
                 btn.addActionListener(new ActionListener() {
                     /**
@@ -100,7 +114,7 @@ public class JPanelPlateau extends JPanel{
                 case "Roi":
                     return new ImageIcon("src/assets/w_king_png_shadow_1024px.png");
                 default:
-                    return null;
+                    return new ImageIcon("src/assets/square_no_color_png_shadow_1024px.png");
             }
         else if (couleur == Couleur.Noir){
             switch (nomPiece) {
@@ -117,7 +131,7 @@ public class JPanelPlateau extends JPanel{
                 case "Roi":
                     return new ImageIcon("src/assets/b_king_png_shadow_1024px.png");
                 default:
-                    return null;
+                    return new ImageIcon("src/assets/square_no_color_png_shadow_1024px.png");
             }
         }
         return null;
@@ -153,9 +167,10 @@ public class JPanelPlateau extends JPanel{
                     @Override
                     public void actionPerformed(ActionEvent e) {
                         JButton btn = (JButton) e.getSource();
-                        int idX = (int) btn.getClientProperty("idX");
-                        int idY = (int) btn.getClientProperty("idY");
+                        idX = (int) btn.getClientProperty("idX");
+                        idY = (int) btn.getClientProperty("idY");
                         System.out.println("idX = " + idX + " idY = " + idY);
+                        enAttente = false;
                     }
                 });
 
@@ -165,5 +180,28 @@ public class JPanelPlateau extends JPanel{
         // On met à jour l'affichage
         leDamier.revalidate();
         leDamier.repaint();
+    }
+    
+    public static void afficherMessage(String message) {
+        JOptionPane.showMessageDialog(new JFrame(), message);
+    }
+
+    public static String afficherInput(String message) {
+        return JOptionPane.showInputDialog(new JFrame(), message);
+    }
+
+    public static int afficherConfirm(String message) {
+        return JOptionPane.showConfirmDialog(new JFrame(), message);
+    }
+
+    public void click() {
+        enAttente = true;
+        while (enAttente) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
