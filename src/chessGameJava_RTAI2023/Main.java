@@ -6,68 +6,133 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
 
-        Position pos_depart = new Position (0,'a');
-        Position pos_arrivee = new Position (0,'a');
+        Position pos_depart = new Position ();
+        Position pos_arrivee = new Position ();
         Joueur JBlanc = new Joueur("Yacine",Couleur.Blanc);
         Joueur JNoir = new Joueur("Bastien",Couleur.Noir);
     	Plateau plateau = new Plateau(JBlanc,JNoir);
-    	
-    	
-    	
+    	Jeu jeu = new Jeu();
+    	Piece Roi_Blanc;
+    	Piece Roi_Noir;
+    	int i = 0;
     	
         plateau.initialiser();
         plateau.AfficherPlateau(); //JUSTE POUR TESTER LA METHODE INITIALISER (TEST REUSSI)
 
-        // JPanelPlateau GuiPlateau = new JPanelPlateau();
+        System.out.println("Voici la liste des pieces dispo du Joueur Blanc :");
+        System.out.println(JBlanc.AfficherList(JBlanc.get_PieceDispo())+"\n");
+        System.out.println("Voici la liste des pieces mortes du Joueur Blanc :");
+        System.out.println(JBlanc.AfficherList(JBlanc.get_PieceMorte())+"\n");
 
+        System.out.println("Voici la liste des pieces dispo du Joueur Noir :");
+        System.out.println(JNoir.AfficherList(JNoir.get_PieceDispo())+"\n");
+        System.out.println("Voici la liste des pieces mortes du Joueur Noir :");
+        System.out.println(JNoir.AfficherList(JNoir.get_PieceMorte())+"\n");
+        
+        
+        
+        
         // Test de la fonction lireMatrice() pour afficher le plateau avec ses pièces au départ
-        JPanelPlateau jPanelPlateau = new JPanelPlateau();
-        jPanelPlateau.lireMatrice(plateau.get_plateau());
+        /*JPanelPlateau jPanelPlateau = new JPanelPlateau();
+        jPanelPlateau.lireMatrice(plateau.get_plateau());*/
 
 
 
+        
+        
 
-
-//        Position pos = new Position ('a',0);
-        
-        
-        
-        
-        
-        for (int i = 0; i < 30; i++) {
-        	if (i % 2 == 0) {
-                System.out.println("Que le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
-                pos_depart.DemanderPosDepart(JBlanc,plateau);
+      //Lancement du jeu
+        while (!jeu.echec_math(plateau, JNoir, JBlanc.RechercheRoiList()) && !jeu.echec_math(plateau, JBlanc, JNoir.RechercheRoiList())) {
+        	
+            if (i % 2 == 0) {
+                System.out.println("\nQue le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
+                pos_depart.DemanderPosDepart(JBlanc, plateau);
                 System.out.println("Que le Joueur Blanc donne la position ou il veut mettre sa piece\n");
-                pos_arrivee.DemanderPosArrivee(JBlanc,plateau);
-                while (!(JBlanc.jouer(plateau,JNoir,pos_depart,pos_arrivee))) {
-                	pos_depart.DemanderPosDepart(JBlanc,plateau);
-                	pos_arrivee.DemanderPosArrivee(JBlanc,plateau);
+                pos_arrivee.DemanderPosArrivee(JBlanc, plateau);
+
+                
+                while (!(JBlanc.jouer(plateau, JNoir, pos_depart, pos_arrivee))) {
+                    pos_depart.DemanderPosDepart(JBlanc, plateau);
+                    pos_arrivee.DemanderPosArrivee(JBlanc, plateau);
                 }
-                plateau.AfficherPlateau();
-                System.out.println("Voici la liste des pieces dispo du Joueur Noir :");
-                System.out.println(JNoir.AfficherList(JNoir.get_PieceDispo())+"\n");
-                System.out.println("Voici la liste des pieces mortes du Joueur Noir :");
-                System.out.println(JNoir.AfficherList(JNoir.get_PieceMorte())+"\n");
-        	}
-        	else {
-                System.out.println("Que le Joueur Noir donne la position de la piece qu'il veut deplacer\n");
-                pos_depart.DemanderPosDepart(JNoir,plateau);
-                System.out.println("Que le Joueur Noir donne la position ou il veut mettre sa piece\n");
-                pos_arrivee.DemanderPosArrivee(JNoir,plateau);
-                while (!(JNoir.jouer(plateau,JBlanc,pos_depart,pos_arrivee))) {
-                	pos_depart.DemanderPosDepart(JNoir,plateau);
-                	pos_arrivee.DemanderPosArrivee(JNoir,plateau);
+                
+                Plateau aux = (Plateau) plateau.clone();
+                
+                while (jeu.echec(plateau, JBlanc, JNoir.RechercheRoiList()) && !jeu.echec_math(plateau, JBlanc, JNoir.RechercheRoiList())) {
+                	
+                	plateau = (Plateau) aux.clone();
+                	plateau.AfficherPlateau();
+                	
+                    System.out.println("Votre Roi Noir est en position d'echec, vous devez le deplacer, ou alors le sauver par le biais d'une autre piece !");
+                    System.out.println("\nQue le Joueur Noir donne la position de la piece qu'il veut deplacer\n");
+                    pos_depart.DemanderPosDepart(JNoir, plateau);
+                    System.out.println("Que le Joueur Noir donne la position ou il veut mettre sa piece\n");
+                    pos_arrivee.DemanderPosArrivee(JNoir, plateau);
+
+                    while (!(JNoir.jouer(plateau, JBlanc, pos_depart, pos_arrivee))) {
+                        pos_depart.DemanderPosDepart(JNoir, plateau);
+                        pos_arrivee.DemanderPosArrivee(JNoir, plateau);
+                    }
+                    
                 }
-                plateau.AfficherPlateau();
-                System.out.println("Voici la liste des pieces dispo du Joueur Blanc :");
-                System.out.println(JBlanc.AfficherList(JBlanc.get_PieceDispo())+"\n");
-                System.out.println("Voici la liste des pieces mortes du Joueur Blanc :");
-                System.out.println(JBlanc.AfficherList(JBlanc.get_PieceMorte())+"\n");
-        	}
+
+            } else {
+                System.out.println("\nQue le Joueur Noir donne la position de la piece qu'il veut deplacer\n");
+                pos_depart.DemanderPosDepart(JNoir, plateau);
+                System.out.println("Que le Joueur JNoir donne la position ou il veut mettre sa piece\n");
+                pos_arrivee.DemanderPosArrivee(JNoir, plateau);
+
+                while (!(JNoir.jouer(plateau, JBlanc, pos_depart, pos_arrivee))) {
+                    pos_depart.DemanderPosDepart(JNoir, plateau);
+                    pos_arrivee.DemanderPosArrivee(JNoir, plateau);
+                }
+                
+                Plateau aux = (Plateau) plateau.clone();
+                
+                while (jeu.echec(plateau, JNoir, JBlanc.RechercheRoiList()) && !jeu.echec_math(plateau, JNoir, JBlanc.RechercheRoiList())) {
+                	
+                	plateau = (Plateau) aux.clone();
+                	plateau.AfficherPlateau();
+                	
+                    System.out.println("Votre Roi Blanc est en position d'echec, vous devez le deplacer, ou alors le sauver par le biais d'une autre piece !");
+                    System.out.println("\nQue le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
+                    pos_depart.DemanderPosDepart(JBlanc, plateau);
+                    System.out.println("Que le Joueur Blanc donne la position ou il veut mettre sa piece\n");
+                    pos_arrivee.DemanderPosArrivee(JBlanc, plateau);
+
+                    while (!(JBlanc.jouer(plateau, JNoir, pos_depart, pos_arrivee))) {
+                        pos_depart.DemanderPosDepart(JBlanc, plateau);
+                        pos_arrivee.DemanderPosArrivee(JBlanc, plateau);
+                    }
+
+                }
+            }
+            plateau.AfficherPlateau();
+            i++;
+            
+            
+            
+            //Juste pour trouver ou ca coince
+            System.out.println("La Position du ROI BLANC est ["+JBlanc.RechercheRoiList().get_x()+","+JBlanc.RechercheRoiList().get_y()+"]");
+            System.out.println("La Position du ROI NOIR est ["+JNoir.RechercheRoiList().get_x()+","+JNoir.RechercheRoiList().get_y()+"]");
         }
+
         
-        /*for (int i = 0; i < 30; i++) {
+        //Annonce du gagnant
+        if (jeu.echec_math(plateau, JNoir, JBlanc.RechercheRoiList())){
+    		System.out.println("Le Roi Blanc est en echec et mat !\n"+"L'equipe Noire, "+JNoir.get_nom()+", a donc gagné !");
+    	}
+    	else if (jeu.echec_math(plateau, JBlanc, JNoir.RechercheRoiList())) {
+    		System.out.println("Le Roi Noir est en echec et mat !\n"+"L'equipe Blanche, "+JBlanc.get_nom()+", a donc gagné !");
+    	}
+        
+        
+        
+        
+        
+        //POUR TESTER LES PIECES NOIRES
+        /*for ( i = 0; i < 30; i++) {
+        	
         	System.out.println("Que le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
             pos_depart.DemanderPosDepart(JBlanc,plateau);
             System.out.println("Que le Joueur Blanc donne la position ou il veut mettre sa piece\n");
@@ -75,6 +140,23 @@ public class Main {
             while (!(JBlanc.jouer(plateau,JNoir,pos_depart,pos_arrivee))) {
             	pos_depart.DemanderPosDepart(JBlanc,plateau);
             	pos_arrivee.DemanderPosArrivee(JBlanc,plateau);
+            }
+            plateau.AfficherPlateau();
+        }*/
+        
+        
+        
+        
+        //POUR TESTER LES PIECES BLANCHES
+        /*for (int i = 0; i < 30; i++) {
+        	
+        	System.out.println("Que le Joueur Noir donne la position de la piece qu'il veut deplacer\n");
+            pos_depart.DemanderPosDepart(JNoir,plateau);
+            System.out.println("Que le Joueur Noir donne la position ou il veut mettre sa piece\n");
+            pos_arrivee.DemanderPosArrivee(JNoir,plateau);
+            while (!(JNoir.jouer(plateau,JBlanc,pos_depart,pos_arrivee))) {
+            	pos_depart.DemanderPosDepart(JNoir,plateau);
+            	pos_arrivee.DemanderPosArrivee(JNoir,plateau);
             }
             plateau.AfficherPlateau();
         }*/

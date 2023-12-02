@@ -2,9 +2,9 @@ package chessGameJava_RTAI2023;
 
 import javax.swing.*;
 import java.util.Scanner;
-public class Position {
+public class Position implements Cloneable{
     private int x;
-    private char y;
+    private int y;
 
     
     
@@ -13,9 +13,18 @@ public class Position {
      * @param x
      * @param y
      */
-    public Position(int x, char y) {
+    public Position(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+    
+    
+    
+    /**
+     * Constructeur par default de la classe Position
+     */
+    public Position() {
+    	
     }
     
     
@@ -34,7 +43,7 @@ public class Position {
      * Fonction getter de y
      * @return
      */
-    public char get_y() {
+    public int get_y() {
     	return this.y;
     }
     
@@ -54,8 +63,20 @@ public class Position {
      * Fonction setter de l'attribut y
      * @param y
      */
-    public void set_y(char y) {
+    public void set_y(int y) {
     	this.y = y;
+    }
+    
+    
+    
+    @Override
+    public Position clone() {
+        try {
+            return (Position) super.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace(System.err);
+            return null;
+        }
     }
     
     
@@ -86,7 +107,7 @@ public class Position {
 	    }
 
     	this.set_x(x-1);
-    	this.set_y(y);
+    	this.set_y(GetYByValue(y));
     }
     
     
@@ -101,6 +122,7 @@ public class Position {
     	
     	boolean MaPiece = false;
     	Scanner scanner = new Scanner(System.in);
+    	char y = ' ';
 
     	while(!MaPiece) {
 
@@ -125,7 +147,7 @@ public class Position {
 	    		System.out.println("Il n'y a aucune piece à cette position.\n");
 	    	}
 	    	//On verifie s'il existe bien une piece à cette position
-	    	else if (EstSaPiece(J,plateau.get_plateau()[x-1][GetYByValue(y)])) {
+	    	else if (Jeu.EstSaPiece(J,plateau.get_plateau()[x-1][GetYByValue(y)])) {
 	    		MaPiece = true;
 	    	}
 	    	else {
@@ -133,24 +155,7 @@ public class Position {
 	    	}
     	}
     	this.set_x(x-1);
-    	this.set_y(y);
-    }
-    
-    
-    
-    /**
-     * Fonction qui verifie si la piece choisie corresponds aux pieces qu'il peut choisir
-     * @param J
-     * @param piece
-     * @return
-     */
-    public boolean EstSaPiece(Joueur J, Piece piece) {
-    	boolean MaPiece = false;
-    	
-    	if ((piece.get_couleur() == J.get_couleur())){
-    		MaPiece = true;
-    	}    	
-    	return MaPiece;
+    	this.set_y(GetYByValue(y));
     }
     
     
@@ -191,5 +196,12 @@ public class Position {
     	}
     	
     	return resultat;
+    }
+    
+    
+    public String AfficherPos() {
+    	String res = ("Position est : ("+this.x+","+this.y+")");
+    	
+    	return res;
     }
 }

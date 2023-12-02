@@ -1,8 +1,6 @@
 package chessGameJava_RTAI2023;
 
-public class Jeu implements InterJeu{
-    private Joueur JBlanc;
-    private Joueur JNoir;
+public class Jeu {
  
     
     
@@ -21,32 +19,122 @@ public class Jeu implements InterJeu{
     
     
     /**
-     * Fonction qui verifie s'il y'a un echec a la position donnée en parametre
-     * @param plateau
-     * @param i
-     * @param y
+     * Fonction qui verifie si la piece choisie corresponds aux pieces qu'il peut choisir
+     * @param J
+     * @param piece
      * @return
      */
-    public static boolean echec(Plateau plateau, int x, int y) {
-    	return false;
+    public static boolean EstSaPiece(Joueur J, Piece piece) {
+    	boolean MaPiece = false;
+    	
+    	if ((piece.get_couleur() == J.get_couleur())){
+    		MaPiece = true;
+    	}    	
+    	return MaPiece;
     }
     
     
     
     /**
-     * Fonction qui verifiera s'il y'a echec et math
+     * Fonction qui verifie s'il y'a un echec a la position donnée en parametre
      * @param plateau
+     * @param JAdverse
      * @param PosRoi
      * @return
      */
-    public boolean echec_math(Plateau plateau, Position PosRoi) {
+    public static boolean echec(Plateau plateau, Joueur JAdverse, Position PosRoi) {
+    	boolean echec = false;
+    	int i = 0;
+    	
+    	while ((i < JAdverse.get_PieceDispo().size()) && (!echec)) {
+    		if (JAdverse.get_PieceDispo().get(i).getClass().getName().contains("Pion")) {
+	    		echec = Pion.PositionPossible(plateau,PionPremDepla(JAdverse.get_PieceDispo().get(i).get_pos().get_x()),JAdverse.get_PieceDispo().get(i).get_pos(),PosRoi);
+    		}
+    		else if (JAdverse.get_PieceDispo().get(i).getClass().getName().contains("Tour")) {
+	    		echec = Tour.PositionPossible(plateau,JAdverse.get_PieceDispo().get(i).get_pos(),PosRoi);
+    		}
+    		else if (JAdverse.get_PieceDispo().get(i).getClass().getName().contains("Fou")) {
+	    		echec = Fou.PositionPossible(plateau,JAdverse.get_PieceDispo().get(i).get_pos(),PosRoi);
+    		}
+    		else if (JAdverse.get_PieceDispo().get(i).getClass().getName().contains("Cavalier")) {
+	    		echec = Cavalier.PositionPossible(plateau,JAdverse.get_PieceDispo().get(i).get_pos(),PosRoi);
+    		}
+    		else if (JAdverse.get_PieceDispo().get(i).getClass().getName().contains("Reine")) {
+	    		echec = Reine.PositionPossible(plateau,JAdverse.get_PieceDispo().get(i).get_pos(),PosRoi);
+    		}
+    		
+    		i++;
+    	}
+    	
+    	return echec;
+    }
+    
+    
+    
+/**
+ * Fonction qui verifiera s'il y'a echec et math
+ * @param plateau
+ * @param JAdverse
+ * @param PosRoi
+ * @return
+ */
+    public boolean echec_math(Plateau plateau, Joueur JAdverse, Position PosRoi) {
     	
     	boolean Termine = false;
-    	int x = PosRoi.get_x();
-    	int y = PosRoi.GetYByValue(PosRoi.get_y());
-    	
-    	if ((this.echec(plateau, x+1, y)) &&  (this.echec(plateau, x-1, y)) && (this.echec(plateau, x, y+1)) && (this.echec(plateau, x, y-1))) {
-    		Termine = true;
+    	Position pos;
+    	//Si le Roi est en echec sur sa case
+    	if (this.echec(plateau, JAdverse, pos = new Position(PosRoi.get_x(), PosRoi.get_y()))) {
+	    	if (PosRoi.get_x() > 0 && PosRoi.get_y() > 0 && PosRoi.get_x() < 7 && PosRoi.get_y() < 7) {
+	    		if ((!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()+1, PosRoi.get_y()))) &&  (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()-1, PosRoi.get_y()))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x(), PosRoi.get_y()+1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x(), PosRoi.get_y()-1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()+1, PosRoi.get_y()+1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()+1, PosRoi.get_y()-1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()-1, PosRoi.get_y()+1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()-1, PosRoi.get_y()-1)))) {
+	    			Termine = true;
+	    		}
+	    	}
+	    	else if (PosRoi.get_x() == 0) {
+	    		if (PosRoi.get_y() == 0) {
+	    			if ((!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()+1, PosRoi.get_y()))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()+1, PosRoi.get_y()+1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x(), PosRoi.get_y()+1)))){
+	    				Termine = true;
+	    			}
+	    		}
+	    		else if (PosRoi.get_y() == 7) {
+	    			if ((!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()+1, PosRoi.get_y()))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()+1, PosRoi.get_y()-1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x(), PosRoi.get_y()-1)))){
+	    				Termine = true;
+	    			}
+	    		}
+	    		else {
+	    			if ((!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x(), PosRoi.get_y()+1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()+1, PosRoi.get_y()+1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()+1, PosRoi.get_y())) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()+1, PosRoi.get_y()-1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x(), PosRoi.get_y()-1))))){
+	    				Termine = true;
+	    			}
+	    		}
+	    	}
+	    	else if (PosRoi.get_x() == 7) {
+	    		if (PosRoi.get_y() == 0) {
+	    			if ((!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()-1, PosRoi.get_y()))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()-1, PosRoi.get_y()+1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x(), PosRoi.get_y()+1)))){
+	    				Termine = true;
+	    			}
+	    		}
+	    		else if (PosRoi.get_y() == 7) {
+	    			if ((!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()-1, PosRoi.get_y()))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()-1, PosRoi.get_y()-1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x(), PosRoi.get_y()-1)))){
+	    				Termine = true;
+	    			}
+	    		}
+	    		else {
+	    			if ((!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x(), PosRoi.get_y()+1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()-1, PosRoi.get_y()+1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()-1, PosRoi.get_y())) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()-1, PosRoi.get_y()-1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x(), PosRoi.get_y()-1))))){
+	    				Termine = true;
+	    			}
+	    		}
+	    	}
+	    	else if ((PosRoi.get_x() > 0) && (PosRoi.get_x() < 7)) {
+	    		if (PosRoi.get_y() == 0 ) {
+	    			if ((!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()-1, PosRoi.get_y()))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()-1, PosRoi.get_y()+1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x(), PosRoi.get_y()+1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()+1, PosRoi.get_y()+1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()+1, PosRoi.get_y())))) {
+	    				Termine = true;
+	    			}
+	    		}
+	    		else if (PosRoi.get_y() == 7 ) {
+	    			if ((!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()-1, PosRoi.get_y()))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()-1, PosRoi.get_y()-1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x(), PosRoi.get_y()-1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()+1, PosRoi.get_y()-1))) && (!Roi.PositionPossible(plateau, JAdverse, PosRoi, pos = new Position(PosRoi.get_x()+1, PosRoi.get_y())))) {
+	    				Termine = true;
+	    			}
+	    		}
+	    	}
     	}
     	
     	return Termine;

@@ -1,25 +1,27 @@
 package chessGameJava_RTAI2023;
 
-public abstract class Piece {
+public class Piece implements Cloneable{
     private Couleur c;
+    private Position pos;
 
+    
+    
     /**
      * Constructeur de la classe Piece
      * @param c
      * @param pos
      */
-    public Piece(Couleur c) {
+    public Piece(Couleur c, Position pos) {
         this.c = c;
+        this.pos = pos;
     }
     
     
     
     /**
-     * Fonction setter de l'attrubut couleur
-     * @param c
+     * Constructeur par default de la classe Piece
      */
-    public void set_couleur(Couleur c) {
-    	this.c = c;
+    public Piece() {
     }
     
     
@@ -35,17 +37,52 @@ public abstract class Piece {
     
     
     /**
-     * Fonction getter de id
-     * @return
+     * Fonction setter de l'attribut couleur
+     * @param c
      */
-    public int get_id() {
-    	return this.get_id();
+    public void set_couleur(Couleur c) {
+    	this.c = c;
     }
-
     
     
+    
+    /**
+     * Fonction getter de l'attribut pos
+     */
+    public Position get_pos() {
+    	return this.pos;
+    }
+    
+    
+    
+    /**
+     * Fonction setter pour l'attribut pos
+     * @param pos
+     */
+    public void set_pos(Position pos) {
+    	this.pos = pos;
+    }
+    
+    
+    
+    @Override
+    public Piece clone() {
+        try {
+            Piece clone = (Piece) super.clone();
+            clone.set_pos(this.get_pos().clone());
+            clone.c = this.c;  // La couleur est immuable, pas besoin de clonage profond
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace(System.err);
+            return null;
+        }
+    }
+    
+    
+    
+    //JUSTE POUR TESTER L'AFFICHAGE, A SUPPRIMER QUAND ON AURA L'INTERFACE GRAPHIQUE
     public String toString() {
-    	String res = " ";
+    	String res = "";
     	if (this.getClass().getName().contains("Pion"))
 			res = ("Pion");
 		else if (this.getClass().getName().contains("Tour"))
