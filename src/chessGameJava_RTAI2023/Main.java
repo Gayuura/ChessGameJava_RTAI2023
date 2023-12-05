@@ -1,5 +1,7 @@
 package chessGameJava_RTAI2023;
 
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -28,8 +30,11 @@ public class Main {
 //        JPanelPromotion GuiPromotion = new JPanelPromotion();
 
         // Test de la fonction lireMatrice() pour afficher le plateau avec ses pièces au départ
-        JPanelPlateau jPanelPlateau = new JPanelPlateau();
+        JPanelPlateau jPanelPlateau = new JPanelPlateau(); // Peut être enlever plateau dans les parenthèses
         jPanelPlateau.lireMatrice(plateau.get_plateau());
+
+        // Pour tester le fonctionnement d'un pop-up "Erreur" par exemple
+        // JOptionPane.showMessageDialog(jPanelPlateau, "Bonjour, c'est un test !", "Erreur", JOptionPane.ERROR_MESSAGE);
 
 
 

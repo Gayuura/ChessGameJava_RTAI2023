@@ -11,6 +11,13 @@ public class JPanelPlateau extends JPanel{
     private Boolean enAttente = false;
     private int idX;
     private int idY;
+    // Création d'une variable local plateau
+    private Plateau plateau;
+
+    // Constructeur de la viariable plateau
+    public JPanelPlateau(Plateau plateau) {
+        this.plateau = plateau;
+    }
 
 
     public JPanelPlateau() {
@@ -157,6 +164,7 @@ public class JPanelPlateau extends JPanel{
                 btn.putClientProperty("idX", i);
                 btn.putClientProperty("idY", j);
 
+                // On alterne la couleur d'une case en fonction de la position pour créer un motif de damier
                 if ((i + j) % 2 == 0)
                     btn.setBackground(Color.WHITE);
                 else
@@ -166,6 +174,7 @@ public class JPanelPlateau extends JPanel{
                 btn.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
+                        // Code déclenché lorsqu'un joueur clique sur un bouton
                         JButton btn = (JButton) e.getSource();
                         idX = (int) btn.getClientProperty("idX");
                         idY = (int) btn.getClientProperty("idY");
@@ -174,12 +183,41 @@ public class JPanelPlateau extends JPanel{
                     }
                 });
 
+                // On ajoute le bouton à l'interface graphique (au Damier)
                 leDamier.add(btn);
             }
         }
         // On met à jour l'affichage
         leDamier.revalidate();
         leDamier.repaint();
+    }
+
+    /* Fonction deplacerPiece() qui permet de déplacer une pièce au niveau de l'interface graphique en vérifiant si le déplacement est possible avec la fonction PositionPossible() */
+    public void deplacerPiece(int departX, int departY, int arriveeX, int arriveeY) {
+
+        Piece pieceDepart = plateau.get_plateau()[departX][departY];
+
+        // Si le joueur clique sur une case vide au départ
+        if (pieceDepart == null) {
+            // Pop-up sur l'interface graphique à la place d'un affichage console
+            JOptionPane.showMessageDialog(null, "Aucune pièce à la position de départ", "Erreur", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Si le déplacement n'est pas possible
+        if (!pieceDepart.PositionPossible(plateau.get_plateau(), departX, departY, arriveeX, arriveeY)) {
+            // Pop-up sur l'interface graphique à la place d'un affichage console
+            JOptionPane.showMessageDialog(null, "Déplacement non autorisé pour cette pièce.", "Erreur", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Affecte pieceDepart à la position d'arrivée spécifiée par les coordonnées dans la matrice du plateau
+        plateau.get_plateau()[arriveeX][arriveeY] = pieceDepart;
+        // Affecte la valeur null à la position de départ spécifiée par les coordonnées dans la matrice du plateau
+        plateau.get_plateau()[departX][departY] = null;
+
+        // Mettre à jour l'interface graphique
+        lireMatrice(plateau.get_plateau());
     }
     
     public static void afficherMessage(String message) {
