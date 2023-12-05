@@ -57,13 +57,14 @@ public class Jeu implements InterJeu{
 	public static void promotionPion(Plateau plateau, Position depart, Position arrivee, Couleur couleur) {
 
 		if(couleur == Couleur.Blanc) {
-			if(arrivee.get_x() == 8) {
-				plateau.get_plateau()[arrivee.get_x()][arrivee.GetYByValue(arrivee.get_y())] = new Reine(Couleur.Blanc, 10);
+			if(arrivee.get_x() == 7) {
+				JPanelPromotion jPanelPromotion = new JPanelPromotion(new JFrame(), Couleur.Blanc);
+				Piece rs = jPanelPromotion.afficherFormulaire();
+				plateau.set_Piece(rs, depart.get_x(), depart.GetYByValue(depart.get_y()));
 			}
 		}
 		else if(couleur == Couleur.Noir){
 			if(arrivee.get_x() == 0) {
-				System.out.println("0 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< [[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]");
 				JPanelPromotion jPanelPromotion = new JPanelPromotion(new JFrame(), Couleur.Blanc);
 				Piece rs = jPanelPromotion.afficherFormulaire();
 				plateau.set_Piece(rs, depart.get_x(), depart.GetYByValue(depart.get_y()));

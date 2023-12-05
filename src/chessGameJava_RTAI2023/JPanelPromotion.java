@@ -17,8 +17,8 @@ public class JPanelPromotion extends JDialog  {
         setResizable(false);
 
 
-//        pack();
-//        setLocationRelativeTo(parent);
+        pack();
+        setLocationRelativeTo(parent);
     }
 
     public Piece afficherFormulaire() {

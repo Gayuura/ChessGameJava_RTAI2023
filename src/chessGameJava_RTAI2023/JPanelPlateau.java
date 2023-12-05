@@ -152,7 +152,7 @@ public class JPanelPlateau extends JPanel{
         leDamier.removeAll();
 
         // On ajoute les nouveaux boutons en fonction de la matrice du plateau
-        for (int i = 0; i < plateau.length; i++) {
+        for (int i = 7; i >= 0; i--) {
             for (int j = 0; j < plateau[i].length; j++) {
                 JButton btn = new JButton();
 
@@ -161,7 +161,7 @@ public class JPanelPlateau extends JPanel{
                     setImgInButton(btn, plateau[i][j].getClass().getSimpleName(), plateau[i][j].get_couleur());
                 }
 
-                btn.putClientProperty("idX", i);
+                btn.putClientProperty("idX", i+1);
                 btn.putClientProperty("idY", j);
 
                 // On alterne la couleur d'une case en fonction de la position pour créer un motif de damier
@@ -205,11 +205,11 @@ public class JPanelPlateau extends JPanel{
         }
 
         // Si le déplacement n'est pas possible
-        if (!pieceDepart.PositionPossible(plateau.get_plateau(), departX, departY, arriveeX, arriveeY)) {
-            // Pop-up sur l'interface graphique à la place d'un affichage console
-            JOptionPane.showMessageDialog(null, "Déplacement non autorisé pour cette pièce.", "Erreur", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+//        if (!pieceDepart.PositionPossible(plateau.get_plateau(), departX, departY, arriveeX, arriveeY)) {
+//            // Pop-up sur l'interface graphique à la place d'un affichage console
+//            JOptionPane.showMessageDialog(null, "Déplacement non autorisé pour cette pièce.", "Erreur", JOptionPane.ERROR_MESSAGE);
+//            return;
+//        }
 
         // Affecte pieceDepart à la position d'arrivée spécifiée par les coordonnées dans la matrice du plateau
         plateau.get_plateau()[arriveeX][arriveeY] = pieceDepart;
@@ -232,7 +232,7 @@ public class JPanelPlateau extends JPanel{
         return JOptionPane.showConfirmDialog(new JFrame(), message);
     }
 
-    public void click() {
+    public void attenteInteraction() {
         enAttente = true;
         while (enAttente) {
             try {
