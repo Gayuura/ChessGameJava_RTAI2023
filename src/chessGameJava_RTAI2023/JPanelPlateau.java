@@ -4,10 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.PrintStream;
 
 public class JPanelPlateau extends JPanel{
     private JPanel lePlateau;
     private JPanel leDamier;
+    private JTextArea textArea;
+    private JPanel GUIConsole;
     private Boolean enAttente = false;
     private int idX;
     private int idY;
@@ -22,16 +25,14 @@ public class JPanelPlateau extends JPanel{
 
     public JPanelPlateau() {
 
-
-
-//        lePlateau.setLayout(new GridLayout(8,8));
         leDamier.setLayout(new GridLayout(8,8));
+        leDamier.setSize(600,600);
         setButton(leDamier);
 
         JFrame frame = new JFrame("JPanelPlateau");
         frame.setContentPane(lePlateau);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(750,750);
+        frame.setSize(1200,750);
         frame.setResizable(false);
         frame.setVisible(true);
     }
@@ -230,6 +231,10 @@ public class JPanelPlateau extends JPanel{
 
     public static int afficherConfirm(String message) {
         return JOptionPane.showConfirmDialog(new JFrame(), message);
+    }
+
+    public void afficherMessageGUI(String message) {
+        textArea.append(message + "\n");
     }
 
     public void attenteInteraction() {
