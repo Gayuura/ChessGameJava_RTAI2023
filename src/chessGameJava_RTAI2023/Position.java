@@ -186,6 +186,7 @@ public class Position implements Cloneable{
 
 		boolean MaPiece = false;
 		Scanner scanner = new Scanner(System.in);
+		char y = ' ';
 
 		while(!MaPiece) {
 
@@ -211,7 +212,7 @@ public class Position implements Cloneable{
 				System.out.println("Il n'y a aucune piece à cette position.\n");
 			}
 			//On verifie s'il existe bien une piece à cette position
-			else if (EstSaPiece(J,plateau.get_plateau()[x-1][GetYByValue(y)])) {
+			else if (Jeu.EstSaPiece(J,plateau.get_plateau()[x-1][GetYByValue(y)])) {
 				MaPiece = true;
 			}
 			else {

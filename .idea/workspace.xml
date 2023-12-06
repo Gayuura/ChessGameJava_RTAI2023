@@ -6,14 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b7e6500c-ac38-4de0-bd79-4356fee813e6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/JPanelPlateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/JPanelPlateau.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Jeu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Jeu.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPromotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPromotion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Jeu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Pion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Pion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Position.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +49,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "22",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "test__011223",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "C:/Users/Bastien/Documents/Alternance/Capitole (Cours)/Prog/TP/ChessGameJava_RTAI202_old",

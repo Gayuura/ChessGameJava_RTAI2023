@@ -41,9 +41,8 @@ public class Main {
         
         
         // Test de la fonction lireMatrice() pour afficher le plateau avec ses pièces au départ
-        /*JPanelPlateau jPanelPlateau = new JPanelPlateau();
-        jPanelPlateau.lireMatrice(plateau.get_plateau());*/
-        JPanelPlateau jPanelPlateau = new JPanelPlateau(); // Peut être enlever plateau dans les parenthèses
+        JPanelPlateau jPanelPlateau = new JPanelPlateau();
+
 
 
         // Pour tester le fonctionnement d'un pop-up "Erreur" par exemple
@@ -62,7 +61,7 @@ public class Main {
 
       //Lancement du jeu
         while (!jeu.echec_math(plateau, JNoir, JBlanc.RechercheRoiList()) && !jeu.echec_math(plateau, JBlanc, JNoir.RechercheRoiList())) {
-        	
+            jPanelPlateau.lireMatrice(plateau.get_plateau());
             if (i % 2 == 0) {
                 System.out.println("\nQue le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
                 pos_depart.DemanderPosDepart(JBlanc, plateau);

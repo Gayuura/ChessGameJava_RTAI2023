@@ -34,7 +34,7 @@ public class JPanelPromotion extends JDialog  {
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                piece = new Reine(couleur, 10);
+                piece = new Reine(couleur, null);
                 dispose(); // Ferme le formulaire après la sélection
             }
         });
@@ -47,7 +47,7 @@ public class JPanelPromotion extends JDialog  {
         btn1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                piece = new Tour(couleur, 10);
+                piece = new Tour(couleur, null);
                 dispose(); // Ferme le formulaire après la sélection
             }
         });
@@ -60,7 +60,7 @@ public class JPanelPromotion extends JDialog  {
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                piece = new Fou(couleur, 10);
+                piece = new Fou(couleur, null);
                 dispose(); // Ferme le formulaire après la sélection
             }
         });
@@ -73,7 +73,7 @@ public class JPanelPromotion extends JDialog  {
         btn3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                piece = new Cavalier(couleur, 10);
+                piece = new Cavalier(couleur, null);
                 dispose(); // Ferme le formulaire après la sélection
             }
         });

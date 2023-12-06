@@ -82,7 +82,7 @@ public class Pion extends Piece {
     			}
     		}
     	}
-		Jeu.promotionPion(plateau, depart, arrivee, couleur);
+//		Jeu.promotionPion(plateau, depart, arrivee, plateau.get_plateau()[xD][yD].get_couleur());
     	
     	return possible;
     }
