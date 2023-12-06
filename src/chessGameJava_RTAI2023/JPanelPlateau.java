@@ -1,6 +1,5 @@
 package chessGameJava_RTAI2023;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,8 +8,22 @@ import java.awt.event.ActionListener;
 public class JPanelPlateau extends JPanel{
     private JPanel lePlateau;
     private JPanel leDamier;
+    private Boolean enAttente = false;
+    private int idX;
+    private int idY;
+    // Création d'une variable local plateau
+    private Plateau plateau;
+
+    // Constructeur de la viariable plateau
+    public JPanelPlateau(Plateau plateau) {
+        this.plateau = plateau;
+    }
+
 
     public JPanelPlateau() {
+
+
+
 //        lePlateau.setLayout(new GridLayout(8,8));
         leDamier.setLayout(new GridLayout(8,8));
         setButton(leDamier);
@@ -21,6 +34,14 @@ public class JPanelPlateau extends JPanel{
         frame.setSize(750,750);
         frame.setResizable(false);
         frame.setVisible(true);
+    }
+
+    public int getIdX() {
+        return idX;
+    }
+
+    public int getIdY() {
+        return idY;
     }
 
     /**
@@ -43,7 +64,7 @@ public class JPanelPlateau extends JPanel{
 
 
                 //Défini l'image du bouton
-                setImgInButton(btn, "Tour", Couleur.Noir);
+                setImgInButton(btn, "", Couleur.Noir);
 
                 btn.addActionListener(new ActionListener() {
                     /**
@@ -100,7 +121,7 @@ public class JPanelPlateau extends JPanel{
                 case "Roi":
                     return new ImageIcon("src/assets/w_king_png_shadow_1024px.png");
                 default:
-                    return null;
+                    return new ImageIcon("src/assets/square_no_color_png_shadow_1024px.png");
             }
         else if (couleur == Couleur.Noir){
             switch (nomPiece) {
@@ -117,7 +138,7 @@ public class JPanelPlateau extends JPanel{
                 case "Roi":
                     return new ImageIcon("src/assets/b_king_png_shadow_1024px.png");
                 default:
-                    return null;
+                    return new ImageIcon("src/assets/square_no_color_png_shadow_1024px.png");
             }
         }
         return null;
@@ -131,7 +152,7 @@ public class JPanelPlateau extends JPanel{
         leDamier.removeAll();
 
         // On ajoute les nouveaux boutons en fonction de la matrice du plateau
-        for (int i = 0; i < plateau.length; i++) {
+        for (int i = 7; i >= 0; i--) {
             for (int j = 0; j < plateau[i].length; j++) {
                 JButton btn = new JButton();
 
@@ -140,9 +161,10 @@ public class JPanelPlateau extends JPanel{
                     setImgInButton(btn, plateau[i][j].getClass().getSimpleName(), plateau[i][j].get_couleur());
                 }
 
-                btn.putClientProperty("idX", i);
+                btn.putClientProperty("idX", i+1);
                 btn.putClientProperty("idY", j);
 
+                // On alterne la couleur d'une case en fonction de la position pour créer un motif de damier
                 if ((i + j) % 2 == 0)
                     btn.setBackground(Color.WHITE);
                 else
@@ -152,18 +174,72 @@ public class JPanelPlateau extends JPanel{
                 btn.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
+                        // Code déclenché lorsqu'un joueur clique sur un bouton
                         JButton btn = (JButton) e.getSource();
-                        int idX = (int) btn.getClientProperty("idX");
-                        int idY = (int) btn.getClientProperty("idY");
+                        idX = (int) btn.getClientProperty("idX");
+                        idY = (int) btn.getClientProperty("idY");
                         System.out.println("idX = " + idX + " idY = " + idY);
+                        enAttente = false;
                     }
                 });
 
+                // On ajoute le bouton à l'interface graphique (au Damier)
                 leDamier.add(btn);
             }
         }
         // On met à jour l'affichage
         leDamier.revalidate();
         leDamier.repaint();
+    }
+
+    /* Fonction deplacerPiece() qui permet de déplacer une pièce au niveau de l'interface graphique en vérifiant si le déplacement est possible avec la fonction PositionPossible() */
+    public void deplacerPiece(int departX, int departY, int arriveeX, int arriveeY) {
+
+        Piece pieceDepart = plateau.get_plateau()[departX][departY];
+
+        // Si le joueur clique sur une case vide au départ
+        if (pieceDepart == null) {
+            // Pop-up sur l'interface graphique à la place d'un affichage console
+            JOptionPane.showMessageDialog(null, "Aucune pièce à la position de départ", "Erreur", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Si le déplacement n'est pas possible
+//        if (!pieceDepart.PositionPossible(plateau.get_plateau(), departX, departY, arriveeX, arriveeY)) {
+//            // Pop-up sur l'interface graphique à la place d'un affichage console
+//            JOptionPane.showMessageDialog(null, "Déplacement non autorisé pour cette pièce.", "Erreur", JOptionPane.ERROR_MESSAGE);
+//            return;
+//        }
+
+        // Affecte pieceDepart à la position d'arrivée spécifiée par les coordonnées dans la matrice du plateau
+        plateau.get_plateau()[arriveeX][arriveeY] = pieceDepart;
+        // Affecte la valeur null à la position de départ spécifiée par les coordonnées dans la matrice du plateau
+        plateau.get_plateau()[departX][departY] = null;
+
+        // Mettre à jour l'interface graphique
+        lireMatrice(plateau.get_plateau());
+    }
+    
+    public static void afficherMessage(String message) {
+        JOptionPane.showMessageDialog(new JFrame(), message);
+    }
+
+    public static String afficherInput(String message) {
+        return JOptionPane.showInputDialog(new JFrame(), message);
+    }
+
+    public static int afficherConfirm(String message) {
+        return JOptionPane.showConfirmDialog(new JFrame(), message);
+    }
+
+    public void attenteInteraction() {
+        enAttente = true;
+        while (enAttente) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

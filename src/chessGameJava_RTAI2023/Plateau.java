@@ -36,7 +36,9 @@ public class Plateau implements Cloneable{
     	this.plateau = plateau;
     }
     
-    
+    public void set_Piece(Piece p, int x, int y) {
+		this.plateau[x][y] = p;
+	}
     
     @Override
     public Object clone() {

@@ -1,8 +1,5 @@
 package chessGameJava_RTAI2023;
 
-import java.util.Arrays;
-import javax.swing.*;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -17,12 +14,23 @@ public class Main {
     	int i = 0;
     	
         plateau.initialiser();
+
+//        Piece[][] test = plateau.get_plateau();
+//        test[0][0] = null;
+//        test[1][0] = null;
+//        test[0][1] = null;
+//        test[1][1] = null;
+//        test[1][0] = new Pion(Couleur.Noir, 10);
+//        plateau.set_plateau(test);
+
         plateau.AfficherPlateau(); //JUSTE POUR TESTER LA METHODE INITIALISER (TEST REUSSI)
 
         System.out.println("Voici la liste des pieces dispo du Joueur Blanc :");
         System.out.println(JBlanc.AfficherList(JBlanc.get_PieceDispo())+"\n");
         System.out.println("Voici la liste des pieces mortes du Joueur Blanc :");
         System.out.println(JBlanc.AfficherList(JBlanc.get_PieceMorte())+"\n");
+//         JPanelPlateau GuiPlateau = new JPanelPlateau();
+//        JPanelPromotion GuiPromotion = new JPanelPromotion();
 
         System.out.println("Voici la liste des pieces dispo du Joueur Noir :");
         System.out.println(JNoir.AfficherList(JNoir.get_PieceDispo())+"\n");
@@ -35,6 +43,17 @@ public class Main {
         // Test de la fonction lireMatrice() pour afficher le plateau avec ses pièces au départ
         /*JPanelPlateau jPanelPlateau = new JPanelPlateau();
         jPanelPlateau.lireMatrice(plateau.get_plateau());*/
+        JPanelPlateau jPanelPlateau = new JPanelPlateau(); // Peut être enlever plateau dans les parenthèses
+
+
+        // Pour tester le fonctionnement d'un pop-up "Erreur" par exemple
+        // JOptionPane.showMessageDialog(jPanelPlateau, "Bonjour, c'est un test !", "Erreur", JOptionPane.ERROR_MESSAGE);
+
+
+
+
+
+
 
 
 

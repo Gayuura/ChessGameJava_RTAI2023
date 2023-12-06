@@ -175,7 +175,7 @@ public class Joueur implements Cloneable{
     	//On verifie si la regle Roque est demandée
     	if ((!plateau.estVide(plateau.get_plateau()[xA][yA])) && (plateau.get_plateau()[xD][yD].toString() == "Roi") && (plateau.get_plateau()[xA][yA].toString() == "Tour")) {
     		if (!Roi.RegleRoque(plateau, depart, arrivee)) {
-    			System.out.println("La regle Roque ne s'applique pas ici !");
+				JPanelPlateau.afficherMessage("La regle Roque ne s'applique pas ici !");
     		}
     		else {
     			//Si la position de depart concerne le Roi Blanc
@@ -281,7 +281,7 @@ public class Joueur implements Cloneable{
 	    	//Si la piece ne peut pas se deplacer a la position d'arrivée
 	    	
 	    	if (!possible) {
-	    			System.out.println("Votre "+plateau.get_plateau()[xD][yD].toString()+" "+plateau.get_plateau()[xD][yD].get_couleur()+" ne peut pas se deplacer a la position voulue !\nVeuillez resaisir les positions pour le deplacement.");
+				JPanelPlateau.afficherMessage("Votre "+plateau.get_plateau()[xD][yD].toString()+" "+plateau.get_plateau()[xD][yD].get_couleur()+" ne peut pas se deplacer a la position voulue !\nVeuillez resaisir les positions pour le deplacement.");
 	    	}
 	    	//Sinon
 	    	else {

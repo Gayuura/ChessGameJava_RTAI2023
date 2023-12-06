@@ -1,6 +1,8 @@
 package chessGameJava_RTAI2023;
 
-public class Jeu {
+public class Jeu implements InterJeu{
+    private Joueur JBlanc;
+    private Joueur JNoir;
  
     
     
@@ -139,4 +141,22 @@ public class Jeu {
     	
     	return Termine;
     }
+
+	public static void promotionPion(Plateau plateau, Position depart, Position arrivee, Couleur couleur) {
+
+		if(couleur == Couleur.Blanc) {
+			if(arrivee.get_x() == 7) {
+				JPanelPromotion jPanelPromotion = new JPanelPromotion(new JFrame(), Couleur.Blanc);
+				Piece rs = jPanelPromotion.afficherFormulaire();
+				plateau.set_Piece(rs, depart.get_x(), depart.GetYByValue(depart.get_y()));
+			}
+		}
+		else if(couleur == Couleur.Noir){
+			if(arrivee.get_x() == 0) {
+				JPanelPromotion jPanelPromotion = new JPanelPromotion(new JFrame(), Couleur.Blanc);
+				Piece rs = jPanelPromotion.afficherFormulaire();
+				plateau.set_Piece(rs, depart.get_x(), depart.GetYByValue(depart.get_y()));
+			}
+		}
+	}
 }
