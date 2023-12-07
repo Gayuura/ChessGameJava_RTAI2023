@@ -9,8 +9,8 @@ import java.io.PrintStream;
 public class JPanelPlateau extends JPanel{
     private JPanel lePlateau;
     private JPanel leDamier;
+    private JScrollPane GUIConsole;
     private JTextArea textArea;
-    private JPanel GUIConsole;
     private Boolean enAttente = false;
     private int idX;
     private int idY;
