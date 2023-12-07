@@ -45,6 +45,11 @@ public class JPanelPlateau extends JPanel{
         return idY;
     }
 
+    // Pour mettre des couleurs au textArea
+//    public JTextArea getTextArea() {
+//        return textArea;
+//    }
+
     /**
      * Créer les boutons et les ajoutes au panel
      * @param panel1
@@ -234,6 +239,11 @@ public class JPanelPlateau extends JPanel{
     }
 
     public void afficherMessageGUI(String message) {
+        textArea.append(message + "\n");
+    }
+
+    public void afficherMessageTourDeJeu(Couleur couleurJoueur) {
+        String message = "[" + couleurJoueur + "]";
         textArea.append(message + "\n");
     }
 

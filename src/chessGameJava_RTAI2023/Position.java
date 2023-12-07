@@ -1,5 +1,6 @@
 package chessGameJava_RTAI2023;
 
+import java.awt.*;
 import java.util.Scanner;
 public class Position implements Cloneable{
     private int x;
@@ -116,6 +117,7 @@ public class Position implements Cloneable{
 		x = jPanelPlateau.getIdX();
 		y = jPanelPlateau.getIdY();
 		jPanelPlateau.afficherMessageGUI("x = " + x + " y = " + y + " \n");
+		// jPanelPlateau.getTextArea().setForeground(Color.GREEN); // Mettre une couleur au textArea
 
 
 		while ((x > 8) || (x < 1)) {

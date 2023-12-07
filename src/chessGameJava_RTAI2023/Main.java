@@ -64,6 +64,7 @@ public class Main {
             jPanelPlateau.lireMatrice(plateau.get_plateau());
             if (i % 2 == 0) {
                 System.out.println("\nQue le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
+                jPanelPlateau.afficherMessageTourDeJeu(Couleur.Blanc);
                 pos_depart.DemanderPosDepart(JBlanc, plateau, jPanelPlateau);
                 System.out.println("Que le Joueur Blanc donne la position ou il veut mettre sa piece\n");
                 pos_arrivee.DemanderPosArrivee(JBlanc, plateau, jPanelPlateau);
@@ -96,6 +97,7 @@ public class Main {
 
             } else {
                 System.out.println("\nQue le Joueur Noir donne la position de la piece qu'il veut deplacer\n");
+                jPanelPlateau.afficherMessageTourDeJeu(Couleur.Noir);
                 pos_depart.DemanderPosDepart(JNoir, plateau, jPanelPlateau);
                 System.out.println("Que le Joueur JNoir donne la position ou il veut mettre sa piece\n");
                 pos_arrivee.DemanderPosArrivee(JNoir, plateau, jPanelPlateau);
