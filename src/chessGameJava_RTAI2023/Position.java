@@ -111,20 +111,20 @@ public class Position implements Cloneable{
 
 	public void DemanderPosArrivee(Joueur J, Plateau plateau, JPanelPlateau jPanelPlateau) {
 
-		JPanelPlateau.afficherMessage("Veuillez cliquer sur une 2eme case");
+		jPanelPlateau.afficherMessageGUI("Choisissez la case où vous souhaitez placer votre pièce \n");
 		jPanelPlateau.attenteInteraction();
 		x = jPanelPlateau.getIdX();
 		y = jPanelPlateau.getIdY();
-		System.out.println("x = " + x + " y = " + y);
+		jPanelPlateau.afficherMessageGUI("x = " + x + " y = " + y + " \n");
 
 
 		while ((x > 8) || (x < 1)) {
-			System.out.print("Votre position x se situe en dehors du plateau, \nveuillez resaisir une position entre 1 et 8 !");
+			jPanelPlateau.afficherMessageGUI("La position x se situe en dehors du plateau, \n veuillez ressaisir une position entre 1 et 8 ! \n");
 			jPanelPlateau.attenteInteraction();
 			x = jPanelPlateau.getIdX();
 		}
 		while ((y > 8) || (y < 1)) {
-			System.out.print("Votre position y se situe en dehors du plateau, \nveuillez resaisir une position entre 1 et 8 !");
+			jPanelPlateau.afficherMessageGUI("La position y que vous avez choisi se trouve en dehors du plateau, \n veuillez ressaisir une position entre a et h ! \n");
 			jPanelPlateau.attenteInteraction();
 			y = jPanelPlateau.getIdX();
 		}
@@ -189,20 +189,20 @@ public class Position implements Cloneable{
 
 		while(!MaPiece) {
 
-			JPanelPlateau.afficherMessage("Veuillez cliquer sur une 1ere case");
+			jPanelPlateau.afficherMessageGUI("Choisissez la pièce que vous souhaitez déplacer \n");
 			jPanelPlateau.attenteInteraction();
 			x = jPanelPlateau.getIdX();
 			y = jPanelPlateau.getIdY();
-			System.out.println("x = " + x + " y = " + y);
+			jPanelPlateau.afficherMessageGUI("x = " + x + " y = " + y + " \n");
 
 
 			while ((x > 8) || (x < 1)) {
-				System.out.print("Votre position x se situe en dehors du plateau, \nveuillez resaisir une position entre 1 et 8 !");
+				JPanelPlateau.afficherMessage("Votre position x se situe en dehors du plateau, \n veuillez ressaisir une position entre 1 et 8 !\n x :  \n");
 				jPanelPlateau.attenteInteraction();
 				x = jPanelPlateau.getIdX();
 			}
 			while ((y > 8) || (y < 1)) {
-				System.out.print("Votre position y se situe en dehors du plateau, \nveuillez resaisir une position entre 1 et 8 !");
+				JPanelPlateau.afficherMessage("Votre position y se situe en dehors du plateau, \n veuillez ressaisir une position entre a et h ! \n");
 				jPanelPlateau.attenteInteraction();
 				y = jPanelPlateau.getIdX();
 			}
@@ -210,14 +210,14 @@ public class Position implements Cloneable{
 
 			//On verifie si la piece choisie corresponds aux pieces qu'il peut choisir
 			if (plateau.estVide(plateau.get_plateau()[x-1][y])) {
-				System.out.println("Il n'y a aucune piece à cette position.\n");
+				JPanelPlateau.afficherMessage("Il n'y a aucune pièce à cette position. \n");
 			}
 			//On verifie s'il existe bien une piece à cette position
 			else if (Jeu.EstSaPiece(J,plateau.get_plateau()[x-1][y])) {
 				MaPiece = true;
 			}
 			else {
-				System.out.println("Vous avez demander le deplacement d'une piece adverse ! Choisissez une piece de votre camp, Merci");
+				JPanelPlateau.afficherMessage("Vous avez demandé le déplacement d'une pièce adverse ! Choississez une pièce de votre camp ! \n");
 			}
 		}
 		this.set_x(x-1);
