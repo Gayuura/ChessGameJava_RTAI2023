@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b7e6500c-ac38-4de0-bd79-4356fee813e6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/JPanelPlateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChessGameJava_RTAI2023/chessGameJava_RTAI2023/JPanelPlateau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Position.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,29 +36,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "312",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Bastien/Documents/Alternance/Capitole (Cours)/Prog/TP/ChessGameJava_RTAI202_old",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;312&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bastien/Documents/Alternance/Capitole (Cours)/MVC/Spring/MarketMusic&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="chessGameJava_RTAI2023.Main" />
@@ -100,6 +98,11 @@
       <workItem from="1701436388920" duration="1572000" />
       <workItem from="1701437994466" duration="9339000" />
       <workItem from="1701804744104" duration="4793000" />
+      <workItem from="1701899431607" duration="767000" />
+      <workItem from="1701942802754" duration="169000" />
+      <workItem from="1701943032328" duration="640000" />
+      <workItem from="1701944203478" duration="75000" />
+      <workItem from="1701955722676" duration="1297000" />
     </task>
     <servers />
   </component>
