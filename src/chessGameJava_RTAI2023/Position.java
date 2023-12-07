@@ -120,16 +120,16 @@ public class Position implements Cloneable{
 		// jPanelPlateau.getTextArea().setForeground(Color.GREEN); // Mettre une couleur au textArea
 
 
-		while ((x > 8) || (x < 1)) {
-			jPanelPlateau.afficherMessageGUI("La position x se situe en dehors du plateau, \n veuillez ressaisir une position entre 1 et 8 ! \n");
-			jPanelPlateau.attenteInteraction();
-			x = jPanelPlateau.getIdX();
-		}
-		while ((y > 8) || (y < 1)) {
-			jPanelPlateau.afficherMessageGUI("La position y que vous avez choisi se trouve en dehors du plateau, \n veuillez ressaisir une position entre a et h ! \n");
-			jPanelPlateau.attenteInteraction();
-			y = jPanelPlateau.getIdX();
-		}
+//		while ((x > 8) || (x < 1)) {
+//			jPanelPlateau.afficherMessageGUI("La position x se situe en dehors du plateau, \n veuillez ressaisir une position entre 1 et 8 ! \n");
+//			jPanelPlateau.attenteInteraction();
+//			x = jPanelPlateau.getIdX();
+//		}
+//		while ((y > 8) || (y < 1)) {
+//			jPanelPlateau.afficherMessageGUI("La position y que vous avez choisi se trouve en dehors du plateau, \n veuillez ressaisir une position entre a et h ! \n");
+//			jPanelPlateau.attenteInteraction();
+//			y = jPanelPlateau.getIdX();
+//		}
 
 		this.set_x(x-1);
 		this.set_y(y);
@@ -198,16 +198,16 @@ public class Position implements Cloneable{
 			jPanelPlateau.afficherMessageGUI("x = " + x + " y = " + y + " \n");
 
 
-			while ((x > 8) || (x < 1)) {
-				JPanelPlateau.afficherMessage("Votre position x se situe en dehors du plateau, \n veuillez ressaisir une position entre 1 et 8 !\n x :  \n");
-				jPanelPlateau.attenteInteraction();
-				x = jPanelPlateau.getIdX();
-			}
-			while ((y > 8) || (y < 1)) {
-				JPanelPlateau.afficherMessage("Votre position y se situe en dehors du plateau, \n veuillez ressaisir une position entre a et h ! \n");
-				jPanelPlateau.attenteInteraction();
-				y = jPanelPlateau.getIdX();
-			}
+//			while ((x > 8) || (x < 1)) {
+//				JPanelPlateau.afficherMessage("Votre position x se situe en dehors du plateau, \n veuillez ressaisir une position entre 1 et 8 !\n x :  \n");
+//				jPanelPlateau.attenteInteraction();
+//				x = jPanelPlateau.getIdX();
+//			}
+//			while ((y > 8) || (y < 1)) {
+//				JPanelPlateau.afficherMessage("Votre position y se situe en dehors du plateau, \n veuillez ressaisir une position entre a et h ! \n");
+//				jPanelPlateau.attenteInteraction();
+//				y = jPanelPlateau.getIdX();
+//			}
 
 
 			//On verifie si la piece choisie corresponds aux pieces qu'il peut choisir

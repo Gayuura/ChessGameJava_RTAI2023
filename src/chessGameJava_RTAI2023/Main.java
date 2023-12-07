@@ -20,8 +20,10 @@ public class Main {
 //        test[1][0] = null;
 //        test[0][1] = null;
 //        test[1][1] = null;
-//        test[1][0] = new Pion(Couleur.Noir, 10);
+//        test[1][0] = new Pion(Couleur.Noir, new Position(1,0));
 //        plateau.set_plateau(test);
+
+//        plateau.set_Piece(new Pion(Couleur.Noir, new Position(1,0)), 1, 0);
 
         plateau.AfficherPlateau(); //JUSTE POUR TESTER LA METHODE INITIALISER (TEST REUSSI)
 
@@ -81,6 +83,7 @@ public class Main {
                 	
                 	plateau = (Plateau) aux.clone();
                 	plateau.AfficherPlateau();
+                    jPanelPlateau.lireMatrice(plateau.get_plateau());
                 	
                     System.out.println("Votre Roi Noir est en position d'echec, vous devez le deplacer, ou alors le sauver par le biais d'une autre piece !");
                     System.out.println("\nQue le Joueur Noir donne la position de la piece qu'il veut deplacer\n");
@@ -94,6 +97,8 @@ public class Main {
                     }
                     
                 }
+
+                Jeu.promotionPion(plateau, Couleur.Blanc);
 
             } else {
                 System.out.println("\nQue le Joueur Noir donne la position de la piece qu'il veut deplacer\n");
@@ -113,6 +118,7 @@ public class Main {
                 	
                 	plateau = (Plateau) aux.clone();
                 	plateau.AfficherPlateau();
+                    jPanelPlateau.lireMatrice(plateau.get_plateau());
                 	
                     System.out.println("Votre Roi Blanc est en position d'echec, vous devez le deplacer, ou alors le sauver par le biais d'une autre piece !");
                     System.out.println("\nQue le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
@@ -126,6 +132,8 @@ public class Main {
                     }
 
                 }
+
+                Jeu.promotionPion(plateau, Couleur.Noir);
             }
             plateau.AfficherPlateau();
             i++;

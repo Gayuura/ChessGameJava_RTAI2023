@@ -144,8 +144,25 @@ public class Jeu{
     	return Termine;
     }
 
-	public static void promotionPion(Plateau plateau, Position depart, Position arrivee, Couleur couleur) {
+	public static void promotionPion(Plateau plateau, Couleur couleur){
+		for (int i = 0; i < 7; i++) {
+			for (int j = 0; j < 7; j++) {
+				Piece p = plateau.get_plateau()[i][j];
+				if(p != null){
+					if(p.get_couleur() == couleur && p.getClass().equals(Pion.class)){
+						if(p.get_pos().get_x() == 0 || p.get_pos().get_x() == 7){
+							JPanelPromotion jPanelPromotion = new JPanelPromotion(new JFrame(), Couleur.Blanc);
+							Piece rs = jPanelPromotion.afficherFormulaire();
+							plateau.set_Piece(rs, p.get_pos().get_x(), p.get_pos().get_y());
+						}
+					}
+				}
+			}
+		}
+	}
 
+	public static void promotionPion(Plateau plateau, Position depart, Position arrivee, Couleur couleur) {
+		System.out.println(depart.get_x() + " " + depart.get_y() + " " + arrivee.get_x() + " " + arrivee.get_y());
 		if(couleur == Couleur.Blanc) {
 			if(arrivee.get_x() == 7) {
 				JPanelPromotion jPanelPromotion = new JPanelPromotion(new JFrame(), Couleur.Blanc);
