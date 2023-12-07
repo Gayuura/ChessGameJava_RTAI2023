@@ -86,6 +86,7 @@ public class Main {
                     jPanelPlateau.lireMatrice(plateau.get_plateau());
                 	
                     System.out.println("Votre Roi Noir est en position d'echec, vous devez le deplacer, ou alors le sauver par le biais d'une autre piece !");
+                    JPanelPlateau.afficherMessage("Votre Roi Noir est en position d'échec, vous devez le déplacer, ou alors le sauver par le biais d'une autre pièce ! \n");
                     System.out.println("\nQue le Joueur Noir donne la position de la piece qu'il veut deplacer\n");
                     pos_depart.DemanderPosDepart(JNoir, plateau, jPanelPlateau);
                     System.out.println("Que le Joueur Noir donne la position ou il veut mettre sa piece\n");
@@ -121,6 +122,7 @@ public class Main {
                     jPanelPlateau.lireMatrice(plateau.get_plateau());
                 	
                     System.out.println("Votre Roi Blanc est en position d'echec, vous devez le deplacer, ou alors le sauver par le biais d'une autre piece !");
+                    JPanelPlateau.afficherMessage("Votre Roi Blanc est en position d'échec, vous devez le déplacer, ou alors le sauver par le biais d'une autre pièce ! \n");
                     System.out.println("\nQue le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
                     pos_depart.DemanderPosDepart(JBlanc, plateau, jPanelPlateau);
                     System.out.println("Que le Joueur Blanc donne la position ou il veut mettre sa piece\n");
@@ -149,9 +151,11 @@ public class Main {
         //Annonce du gagnant
         if (jeu.echec_math(plateau, JNoir, JBlanc.RechercheRoiList())){
     		System.out.println("Le Roi Blanc est en echec et mat !\n"+"L'equipe Noire, "+JNoir.get_nom()+", a donc gagné !");
+            JPanelPlateau.afficherMessage("Le Roi Blanc est en échec et mat !\\n\"+\"L'équipe Noire, \"+JNoir.get_nom()+\", a donc gagné ! \n");
     	}
     	else if (jeu.echec_math(plateau, JBlanc, JNoir.RechercheRoiList())) {
     		System.out.println("Le Roi Noir est en echec et mat !\n"+"L'equipe Blanche, "+JBlanc.get_nom()+", a donc gagné !");
+            JPanelPlateau.afficherMessage("Le Roi Noir est en échec et mat !\\n\"+\"L'équipe Blanche, \"+JBlanc.get_nom()+\", a donc gagné ! \n");
     	}
         
         
