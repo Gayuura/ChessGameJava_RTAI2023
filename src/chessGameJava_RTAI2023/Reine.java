@@ -1,8 +1,6 @@
 package chessGameJava_RTAI2023;
 
 public class Reine extends Piece {
-
-    private int id;
 	
     /**
      * Constructeur de la classe Reine
