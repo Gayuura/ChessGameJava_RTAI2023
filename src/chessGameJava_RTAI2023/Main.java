@@ -42,10 +42,7 @@ public class Main {
         
         // Test de la fonction lireMatrice() pour afficher le plateau avec ses pièces au départ
         JPanelPlateau jPanelPlateau = new JPanelPlateau();
-        jPanelPlateau.afficherMessageGUI("Voici le plateau de départ : \n");
-        jPanelPlateau.afficherMessageGUI("Voici le plateau de départ : \n");
-        jPanelPlateau.afficherMessageGUI("Voici le plateau de départ : \n");
-        jPanelPlateau.afficherMessageGUI("Voici le plateau de départ : \n");
+        // jPanelPlateau.afficherMessageGUI("Voici le plateau de départ : \n");
 
 
         // Pour tester le fonctionnement d'un pop-up "Erreur" par exemple
