@@ -5,30 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7e6500c-ac38-4de0-bd79-4356fee813e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bin/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Cavalier.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Cavalier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Fou.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Fou.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/JPanelPlateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/JPanelPlateau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/JPanelPlateau.form" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/JPanelPlateau.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/JPanelPromotion.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Jeu.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Jeu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Joueur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Piece.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Pion.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Pion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Plateau.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Position.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Reine.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Reine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Roi.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Roi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Tour.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Tour.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Cavalier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Cavalier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Fou.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Fou.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Joueur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Piece.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Pion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Pion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Plateau.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Reine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Reine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Roi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Roi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Tour.java" afterDir="false" />

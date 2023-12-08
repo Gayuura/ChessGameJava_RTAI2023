@@ -2,13 +2,14 @@ package chessGameJava_RTAI2023;
 
 public class Cavalier extends Piece {
 
-    
-    
-    /**
-     * Constructeur de la classe Cavalier
-     * @param c
-     * @param pos
-     */
+
+
+	/**
+	 * Constructeur de la classe Cavalier
+	 * @param c
+	 * @param pos
+	 * @param id
+	 */
     public Cavalier (Couleur c, Position pos, int id) {
         super(c,pos,id);
     }

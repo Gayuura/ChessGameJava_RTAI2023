@@ -5,12 +5,13 @@ public class Piece implements Cloneable{
     private Position pos;
     private int id;
 
-    
-    
+
+
     /**
      * Constructeur de la classe Piece
      * @param c
      * @param pos
+     * @param id
      */
     public Piece(Couleur c, Position pos, int id) {
         this.c = c;
@@ -88,10 +89,12 @@ public class Piece implements Cloneable{
             return null;
         }
     }
-    
-    
-    
-    //JUSTE POUR TESTER L'AFFICHAGE, A SUPPRIMER QUAND ON AURA L'INTERFACE GRAPHIQUE
+
+
+    /**
+     * Fonction toString qui donne le nom de la piece
+     * @return
+     */
     public String toString() {
     	String res = "";
     	if (this.getClass().getName().contains("Pion"))

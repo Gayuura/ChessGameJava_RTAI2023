@@ -132,9 +132,12 @@ public class Joueur implements Cloneable{
     public void SuppPieceDispo(Piece piece) {
     	this.PieceDispo.remove(piece);
     }
-    
-    
 
+
+	/**
+	 * Fonction qui modifie la position (de la piece donné en parametre) dans la liste Piece Dispo
+	 * @param piece
+	 */
 	public void ModifPosList(Piece piece){
 		boolean trouve = false;
 		int i = 0;

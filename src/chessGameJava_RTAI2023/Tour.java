@@ -2,13 +2,14 @@ package chessGameJava_RTAI2023;
 
 public class Tour extends Piece {
 
-    
-    
-    /**
-     * Constructeur de la classe Tour
-     * @param c
-     * @param pos
-     */
+
+
+	/**
+	 * Constructeur de la classe Tour
+	 * @param c
+	 * @param pos
+	 * @param id
+	 */
     public Tour (Couleur c, Position pos, int id) {
         super(c,pos,id);
     }

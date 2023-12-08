@@ -2,14 +2,14 @@ package chessGameJava_RTAI2023;
 
 public class Fou extends Piece {
 
-    
-    
-    /**
-     * Constructeur de la classe Fou
-     * @param c
-     * @param pos
-     */
-    public Fou(Couleur c, Position pos, int id) {
+
+	/**
+	 * Constructeur de la classe Fou
+	 * @param c
+	 * @param pos
+	 * @param id
+	 */
+	public Fou(Couleur c, Position pos, int id) {
         super(c,pos,id);
     }
 
