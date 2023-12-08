@@ -9,8 +9,8 @@ public class Roi extends Piece {
      * @param c
      * @param pos
      */
-    public Roi(Couleur c, Position pos) {
-        super(c,pos);
+    public Roi(Couleur c, Position pos, int id) {
+        super(c,pos,id);
     }
     
     

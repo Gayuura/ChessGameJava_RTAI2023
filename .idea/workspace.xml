@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7e6500c-ac38-4de0-bd79-4356fee813e6" name="Changes" comment="" />
+    <list default="true" id="b7e6500c-ac38-4de0-bd79-4356fee813e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/bin/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Cavalier.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Cavalier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Fou.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Fou.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/JPanelPlateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/JPanelPlateau.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/JPanelPlateau.form" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/JPanelPlateau.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/JPanelPromotion.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Jeu.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Jeu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Joueur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Pion.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Pion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Plateau.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Position.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Reine.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Reine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Roi.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Roi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Tour.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/chessGameJava_RTAI2023/Tour.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Cavalier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Cavalier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Fou.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Fou.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Joueur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Pion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Pion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Plateau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Reine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Reine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Roi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Roi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Tour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Tour.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,31 +61,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "312",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Desktop/Documents/Licence Pro/MAT Programmation/Projet/ChessGameJava_RTAI2023",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;312&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Desktop/Documents/Licence Pro/MAT Programmation/Projet/ChessGameJava_RTAI2023&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="chessGameJava_RTAI2023" />

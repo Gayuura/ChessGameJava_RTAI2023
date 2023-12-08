@@ -9,8 +9,8 @@ public class Cavalier extends Piece {
      * @param c
      * @param pos
      */
-    public Cavalier (Couleur c, Position pos) {
-        super(c,pos);
+    public Cavalier (Couleur c, Position pos, int id) {
+        super(c,pos,id);
     }
     
     

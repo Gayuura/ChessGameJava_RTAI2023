@@ -228,7 +228,7 @@ public class JPanelPlateau extends JPanel{
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                piece = new Reine(couleur, null);
+                piece = new Reine(couleur, null,0);
                 enAttentePromotion = false;
             }
         });
@@ -241,7 +241,7 @@ public class JPanelPlateau extends JPanel{
         btn1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                piece = new Tour(couleur, null);
+                piece = new Tour(couleur, null,0);
                 enAttentePromotion = false;
             }
         });
@@ -254,7 +254,7 @@ public class JPanelPlateau extends JPanel{
         btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                piece = new Fou(couleur, null);
+                piece = new Fou(couleur, null,0);
                 enAttentePromotion = false;
             }
         });
@@ -267,7 +267,7 @@ public class JPanelPlateau extends JPanel{
         btn3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                piece = new Cavalier(couleur, null);
+                piece = new Cavalier(couleur, null,0);
                 enAttentePromotion = false;
             }
         });

@@ -9,8 +9,8 @@ public class Fou extends Piece {
      * @param c
      * @param pos
      */
-    public Fou(Couleur c, Position pos) {
-        super(c,pos);
+    public Fou(Couleur c, Position pos, int id) {
+        super(c,pos,id);
     }
 
     

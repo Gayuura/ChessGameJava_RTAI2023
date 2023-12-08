@@ -9,8 +9,8 @@ public class Tour extends Piece {
      * @param c
      * @param pos
      */
-    public Tour (Couleur c, Position pos) {
-        super(c,pos);
+    public Tour (Couleur c, Position pos, int id) {
+        super(c,pos,id);
     }
     
     

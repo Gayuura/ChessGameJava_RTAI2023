@@ -7,8 +7,8 @@ public class Reine extends Piece {
      * @param c
      * @param pos
      */
-    public Reine(Couleur c, Position pos) {
-        super(c,pos);
+    public Reine(Couleur c, Position pos, int id) {
+        super(c,pos,id);
     }
     
     

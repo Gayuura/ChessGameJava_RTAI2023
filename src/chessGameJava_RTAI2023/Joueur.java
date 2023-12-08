@@ -134,7 +134,23 @@ public class Joueur implements Cloneable{
     }
     
     
-    
+
+	public void ModifPosList(Piece piece){
+		boolean trouve = false;
+		int i = 0;
+
+		while ((i < this.get_PieceDispo().size()) && !trouve) {
+			if (this.get_PieceDispo().get(i).getClass().getName().contains(piece.toString()) && (this.get_PieceDispo().get(i).get_id() == piece.get_id())) {
+				this.SuppPieceDispo(this.get_PieceDispo().get(i));
+				this.AddPieceDispo(piece);
+				trouve = true;
+			}
+			i++;
+		}
+	}
+
+
+
     public Object clone() {
         Object o = null;
         try {
@@ -300,12 +316,12 @@ public class Joueur implements Cloneable{
 	    		}
 	    		
 	    		//Modification de la position de la piéce à deplacer
-	    		pos = new Position(xA,yA);
-	    		plateau.get_plateau()[xD][yD].set_pos(pos);
+	    		plateau.get_plateau()[xD][yD].set_pos(new Position(xA,yA));
 				
 	    		//On fait le deplacement de la piece vers la position d'arrivée
 	    		plateau.get_plateau()[xA][yA] = plateau.get_plateau()[xD][yD];
 	    		plateau.get_plateau()[xD][yD] = null;
+				ModifPosList(plateau.get_plateau()[xA][yA]);
 	    	}
     	}
     	

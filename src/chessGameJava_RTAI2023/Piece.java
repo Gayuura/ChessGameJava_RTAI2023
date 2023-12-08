@@ -3,6 +3,7 @@ package chessGameJava_RTAI2023;
 public class Piece implements Cloneable{
     private Couleur c;
     private Position pos;
+    private int id;
 
     
     
@@ -11,9 +12,10 @@ public class Piece implements Cloneable{
      * @param c
      * @param pos
      */
-    public Piece(Couleur c, Position pos) {
+    public Piece(Couleur c, Position pos, int id) {
         this.c = c;
         this.pos = pos;
+        this.id = id;
     }
     
     
@@ -61,6 +63,15 @@ public class Piece implements Cloneable{
      */
     public void set_pos(Position pos) {
     	this.pos = pos;
+    }
+    
+    
+    
+    /**
+     * Fonction getter de l'attribut id
+     */
+    public int get_id() {
+    	return this.id;
     }
     
     

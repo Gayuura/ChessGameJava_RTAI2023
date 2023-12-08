@@ -9,8 +9,8 @@ public class Pion extends Piece {
      * @param c
      * @param pos
      */
-    public Pion (Couleur c, Position pos) {
-        super(c,pos);
+    public Pion (Couleur c, Position pos, int id) {
+        super(c,pos,id);
     }
     
     /**

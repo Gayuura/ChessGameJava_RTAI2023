@@ -113,33 +113,33 @@ public class Plateau implements Cloneable{
     	
     	//Création et Placement des Pions Blancs
     	for (int j = 0; j < plateau.length; j++) {
-    		plateau[1][j] = new Pion(Couleur.Blanc,new Position(1,j));
+    		plateau[1][j] = new Pion(Couleur.Blanc,new Position(1,j),j);
     		JBlanc.AddPieceDispo(plateau[1][j]);
     		
     	}
     	
     	//Création et Placement des Pions Noirs
     	for (int j = 0; j < plateau.length; j++) {
-    		plateau[6][j] = new Pion(Couleur.Noir,new Position(6,j));
+    		plateau[6][j] = new Pion(Couleur.Noir,new Position(6,j),j);
     		JNoir.AddPieceDispo(plateau[6][j]);
     	}
     	
     	//Création et Placement des autres Pieces Blanches
-    	plateau[0][0] = new Tour(Couleur.Blanc,new Position(0,0));
+    	plateau[0][0] = new Tour(Couleur.Blanc,new Position(0,0),0);
     	
-    	plateau[0][1] = new Cavalier(Couleur.Blanc,new Position(0,1));
+    	plateau[0][1] = new Cavalier(Couleur.Blanc,new Position(0,1),0);
     	
-    	plateau[0][2] = new Fou(Couleur.Blanc,new Position(0,2));
+    	plateau[0][2] = new Fou(Couleur.Blanc,new Position(0,2),0);
     	
-    	plateau[0][3] = new Reine(Couleur.Blanc,new Position(0,3));
+    	plateau[0][3] = new Reine(Couleur.Blanc,new Position(0,3),0);
     	
-    	plateau[0][4] = new Roi(Couleur.Blanc,new Position(0,4));
+    	plateau[0][4] = new Roi(Couleur.Blanc,new Position(0,4),0);
     	
-    	plateau[0][5] = new Fou(Couleur.Blanc,new Position(0,5));
+    	plateau[0][5] = new Fou(Couleur.Blanc,new Position(0,5),1);
     	
-    	plateau[0][6] = new Cavalier(Couleur.Blanc,new Position(0,6));
+    	plateau[0][6] = new Cavalier(Couleur.Blanc,new Position(0,6),1);
     	
-    	plateau[0][7] = new Tour(Couleur.Blanc,new Position(0,7));
+    	plateau[0][7] = new Tour(Couleur.Blanc,new Position(0,7),1);
     	
     	//Mise à jour de la liste des pieces dispo du Joueur Blanc
     	for (int j = 0; j < plateau.length; j++) {
@@ -147,21 +147,21 @@ public class Plateau implements Cloneable{
     	}
     	
     	//Création et Placement des autres Pieces Noires
-    	plateau[7][0] = new Tour(Couleur.Noir,new Position(7,0));
+    	plateau[7][0] = new Tour(Couleur.Noir,new Position(7,0),0);
     	
-    	plateau[7][1] = new Cavalier(Couleur.Noir,new Position(7,1));
+    	plateau[7][1] = new Cavalier(Couleur.Noir,new Position(7,1),0);
     	
-    	plateau[7][2] = new Fou(Couleur.Noir,new Position(7,2));
+    	plateau[7][2] = new Fou(Couleur.Noir,new Position(7,2),0);
     	
-    	plateau[7][3] = new Reine(Couleur.Noir,new Position(7,3));
+    	plateau[7][3] = new Reine(Couleur.Noir,new Position(7,3),0);
     	
-    	plateau[7][4] = new Roi(Couleur.Noir,new Position(7,4));
+    	plateau[7][4] = new Roi(Couleur.Noir,new Position(7,4),0);
     	
-    	plateau[7][5] = new Fou(Couleur.Noir,new Position(7,5));
+    	plateau[7][5] = new Fou(Couleur.Noir,new Position(7,5),1);
     	
-    	plateau[7][6] = new Cavalier(Couleur.Noir,new Position(7,6));
+    	plateau[7][6] = new Cavalier(Couleur.Noir,new Position(7,6),1);
     	
-    	plateau[7][7] = new Tour(Couleur.Noir,new Position(7,7));
+    	plateau[7][7] = new Tour(Couleur.Noir,new Position(7,7),1);
     	
     	//Mise à jour de la liste des pieces dispo du Joueur Noir
     	for (int j = 0; j < plateau.length; j++) {
