@@ -86,7 +86,6 @@ public class Joueur implements Cloneable{
     
     /**
      * Fonction qui va retourner la position du Roi
-     * @param nom
      * @return
      */
     public Position RechercheRoiList(){
@@ -157,7 +156,6 @@ public class Joueur implements Cloneable{
 	/**
 	 * Fonction jouer() de la classe Joueur qui va verifier le chemin et la position d'arrivée sont possibles et puis fera le deplacement voulu de la piece
 	 * @param plateau
-	 * @param premTour
 	 * @param depart
 	 * @param arrivee
 	 * @return

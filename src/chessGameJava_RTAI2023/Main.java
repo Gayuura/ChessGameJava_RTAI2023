@@ -23,8 +23,6 @@ public class Main {
 //        test[1][0] = new Pion(Couleur.Noir, new Position(1,0));
 //        plateau.set_plateau(test);
 
-//        plateau.set_Piece(new Pion(Couleur.Noir, new Position(1,0)), 1, 0);
-
         plateau.AfficherPlateau(); //JUSTE POUR TESTER LA METHODE INITIALISER (TEST REUSSI)
 
         System.out.println("Voici la liste des pieces dispo du Joueur Blanc :");
@@ -43,7 +41,7 @@ public class Main {
         
         
         // Test de la fonction lireMatrice() pour afficher le plateau avec ses pièces au départ
-        JPanelPlateau jPanelPlateau = new JPanelPlateau();
+        JPanelPlateau jPanelPlateau = new JPanelPlateau(JBlanc, JNoir);
         // jPanelPlateau.afficherMessageGUI("Voici le plateau de départ : \n");
 
 
@@ -58,8 +56,8 @@ public class Main {
 
 
 
-        
-        
+
+
 
       //Lancement du jeu
         while (!jeu.echec_math(plateau, JNoir, JBlanc.RechercheRoiList()) && !jeu.echec_math(plateau, JBlanc, JNoir.RechercheRoiList())) {
@@ -99,7 +97,7 @@ public class Main {
                     
                 }
 
-                Jeu.promotionPion(plateau, Couleur.Blanc);
+                Jeu.promotionPion(plateau, jPanelPlateau, Couleur.Blanc);
 
             } else {
                 System.out.println("\nQue le Joueur Noir donne la position de la piece qu'il veut deplacer\n");
@@ -135,7 +133,7 @@ public class Main {
 
                 }
 
-                Jeu.promotionPion(plateau, Couleur.Noir);
+                Jeu.promotionPion(plateau, jPanelPlateau, Couleur.Noir);
             }
             plateau.AfficherPlateau();
             i++;

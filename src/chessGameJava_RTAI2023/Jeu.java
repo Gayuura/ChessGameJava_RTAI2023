@@ -2,12 +2,8 @@ package chessGameJava_RTAI2023;
 
 import javax.swing.*;
 
-public class Jeu{
-    private Joueur JBlanc;
-    private Joueur JNoir;
- 
-    
-    
+public class Jeu implements IJeu{
+
     /**
      * Fonction qui verifie si le Pion effectue son premier deplacement de la partie
      * @param x
@@ -144,37 +140,18 @@ public class Jeu{
     	return Termine;
     }
 
-	public static void promotionPion(Plateau plateau, Couleur couleur){
+	public static void promotionPion(Plateau plateau, JPanelPlateau jPanelPlateau, Couleur couleur){
 		for (int i = 0; i < 7; i++) {
 			for (int j = 0; j < 7; j++) {
 				Piece p = plateau.get_plateau()[i][j];
 				if(p != null){
 					if(p.get_couleur() == couleur && p.getClass().equals(Pion.class)){
 						if(p.get_pos().get_x() == 0 || p.get_pos().get_x() == 7){
-							JPanelPromotion jPanelPromotion = new JPanelPromotion(new JFrame(), Couleur.Blanc);
-							Piece rs = jPanelPromotion.afficherFormulaire();
-							plateau.set_Piece(rs, p.get_pos().get_x(), p.get_pos().get_y());
+							jPanelPlateau.attenteInteractionPromotion(couleur);
+							plateau.set_Piece(jPanelPlateau.getPiece(), p.get_pos().get_x(), p.get_pos().get_y());
 						}
 					}
 				}
-			}
-		}
-	}
-
-	public static void promotionPion(Plateau plateau, Position depart, Position arrivee, Couleur couleur) {
-		System.out.println(depart.get_x() + " " + depart.get_y() + " " + arrivee.get_x() + " " + arrivee.get_y());
-		if(couleur == Couleur.Blanc) {
-			if(arrivee.get_x() == 7) {
-				JPanelPromotion jPanelPromotion = new JPanelPromotion(new JFrame(), Couleur.Blanc);
-				Piece rs = jPanelPromotion.afficherFormulaire();
-				plateau.set_Piece(rs, depart.get_x(), depart.get_y());
-			}
-		}
-		else if(couleur == Couleur.Noir){
-			if(arrivee.get_x() == 0) {
-				JPanelPromotion jPanelPromotion = new JPanelPromotion(new JFrame(), Couleur.Blanc);
-				Piece rs = jPanelPromotion.afficherFormulaire();
-				plateau.set_Piece(rs, depart.get_x(), depart.get_y());
 			}
 		}
 	}

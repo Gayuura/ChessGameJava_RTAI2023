@@ -1,6 +1,5 @@
 package chessGameJava_RTAI2023;
 
-import java.awt.*;
 import java.util.Scanner;
 public class Position implements Cloneable{
     private int x;
@@ -113,7 +112,7 @@ public class Position implements Cloneable{
 	public void DemanderPosArrivee(Joueur J, Plateau plateau, JPanelPlateau jPanelPlateau) {
 
 		jPanelPlateau.afficherMessageGUI("Choisissez la case où vous souhaitez placer votre pièce \n");
-		jPanelPlateau.attenteInteraction();
+		jPanelPlateau.attenteInteractionPlateau();
 		x = jPanelPlateau.getIdX();
 		y = jPanelPlateau.getIdY();
 		jPanelPlateau.afficherMessageGUI("x = " + x + " y = " + y + " \n");
@@ -192,7 +191,7 @@ public class Position implements Cloneable{
 		while(!MaPiece) {
 
 			jPanelPlateau.afficherMessageGUI("Choisissez la pièce que vous souhaitez déplacer \n");
-			jPanelPlateau.attenteInteraction();
+			jPanelPlateau.attenteInteractionPlateau();
 			x = jPanelPlateau.getIdX();
 			y = jPanelPlateau.getIdY();
 			jPanelPlateau.afficherMessageGUI("x = " + x + " y = " + y + " \n");

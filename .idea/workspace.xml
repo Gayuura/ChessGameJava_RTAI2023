@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7e6500c-ac38-4de0-bd79-4356fee813e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/IJeu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPlateau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPromotion.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/JPanelPromotion.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Jeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Jeu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Joueur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Pion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Pion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/chessGameJava_RTAI2023/Position.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +25,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -62,6 +67,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="chessGameJava_RTAI2023" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="chessGameJava_RTAI2023.Main" />
@@ -107,7 +117,7 @@
       <workItem from="1701944203478" duration="75000" />
       <workItem from="1701955722676" duration="8015000" />
       <workItem from="1701969434897" duration="169000" />
-      <workItem from="1701977535335" duration="3446000" />
+      <workItem from="1701977535335" duration="12248000" />
     </task>
     <servers />
   </component>

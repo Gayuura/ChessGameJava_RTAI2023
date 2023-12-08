@@ -4,30 +4,34 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.PrintStream;
 
 public class JPanelPlateau extends JPanel{
     private JPanel lePlateau;
     private JPanel leDamier;
     private JScrollPane GUIConsole;
     private JTextArea textArea;
-    private Boolean enAttente = false;
+    private JPanel GUIPromotion;
+    private JButton afficheBlancMort;
+    private JButton afficheNoirMort;
+    private JPanel buttonAfficheMort;
+    private Boolean enAttentePlateau = false;
+    private Boolean enAttentePromotion = false;
+    private Piece piece;
     private int idX;
     private int idY;
     // Création d'une variable local plateau
     private Plateau plateau;
 
     // Constructeur de la viariable plateau
-    public JPanelPlateau(Plateau plateau) {
-        this.plateau = plateau;
-    }
 
-
-    public JPanelPlateau() {
+    public JPanelPlateau(Joueur jBlanc, Joueur jNoir) {
 
         leDamier.setLayout(new GridLayout(8,8));
         leDamier.setSize(600,600);
         setButton(leDamier);
+
+        GUIPromotion.setLayout(new GridLayout(1,4));
+        GUIPromotion.setVisible(false);
 
         JFrame frame = new JFrame("JPanelPlateau");
         frame.setContentPane(lePlateau);
@@ -35,6 +39,20 @@ public class JPanelPlateau extends JPanel{
         frame.setSize(1200,750);
         frame.setResizable(false);
         frame.setVisible(true);
+        afficheBlancMort.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                afficherMessageGUI("Voici la liste des pieces mortes du Joueur Blanc :");
+                afficherMessageGUI(jBlanc.AfficherList(jBlanc.get_PieceMorte())+"\n");
+            }
+        });
+        afficheNoirMort.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                afficherMessageGUI("Voici la liste des pieces mortes du Joueur Noir :");
+                afficherMessageGUI(jNoir.AfficherList(jNoir.get_PieceMorte())+"\n");
+            }
+        });
     }
 
     public int getIdX() {
@@ -45,6 +63,9 @@ public class JPanelPlateau extends JPanel{
         return idY;
     }
 
+    public Piece getPiece() {
+        return piece;
+    }
     // Pour mettre des couleurs au textArea
 //    public JTextArea getTextArea() {
 //        return textArea;
@@ -185,7 +206,7 @@ public class JPanelPlateau extends JPanel{
                         idX = (int) btn.getClientProperty("idX");
                         idY = (int) btn.getClientProperty("idY");
                         System.out.println("idX = " + idX + " idY = " + idY);
-                        enAttente = false;
+                        enAttentePlateau = false;
                     }
                 });
 
@@ -198,32 +219,58 @@ public class JPanelPlateau extends JPanel{
         leDamier.repaint();
     }
 
-    /* Fonction deplacerPiece() qui permet de déplacer une pièce au niveau de l'interface graphique en vérifiant si le déplacement est possible avec la fonction PositionPossible() */
-    public void deplacerPiece(int departX, int departY, int arriveeX, int arriveeY) {
+    private void setButtonPromotion(Couleur couleur) {
+        JButton btn = new JButton();
+        btn.putClientProperty("idX", 0);
+        btn.putClientProperty("idY", 0);
+        setImgInButton(btn, "Reine", couleur);
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                piece = new Reine(couleur, null);
+                enAttentePromotion = false;
+            }
+        });
+        GUIPromotion.add(btn);
 
-        Piece pieceDepart = plateau.get_plateau()[departX][departY];
+        JButton btn1 = new JButton();
+        btn1.putClientProperty("idX", 0);
+        btn1.putClientProperty("idY", 1);
+        setImgInButton(btn1, "Tour", couleur);
+        btn1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                piece = new Tour(couleur, null);
+                enAttentePromotion = false;
+            }
+        });
+        GUIPromotion.add(btn1);
 
-        // Si le joueur clique sur une case vide au départ
-        if (pieceDepart == null) {
-            // Pop-up sur l'interface graphique à la place d'un affichage console
-            JOptionPane.showMessageDialog(null, "Aucune pièce à la position de départ", "Erreur", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
+        JButton btn2 = new JButton();
+        btn2.putClientProperty("idX", 0);
+        btn2.putClientProperty("idY", 2);
+        setImgInButton(btn2, "Fou", couleur);
+        btn2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                piece = new Fou(couleur, null);
+                enAttentePromotion = false;
+            }
+        });
+        GUIPromotion.add(btn2);
 
-        // Si le déplacement n'est pas possible
-//        if (!pieceDepart.PositionPossible(plateau.get_plateau(), departX, departY, arriveeX, arriveeY)) {
-//            // Pop-up sur l'interface graphique à la place d'un affichage console
-//            JOptionPane.showMessageDialog(null, "Déplacement non autorisé pour cette pièce.", "Erreur", JOptionPane.ERROR_MESSAGE);
-//            return;
-//        }
-
-        // Affecte pieceDepart à la position d'arrivée spécifiée par les coordonnées dans la matrice du plateau
-        plateau.get_plateau()[arriveeX][arriveeY] = pieceDepart;
-        // Affecte la valeur null à la position de départ spécifiée par les coordonnées dans la matrice du plateau
-        plateau.get_plateau()[departX][departY] = null;
-
-        // Mettre à jour l'interface graphique
-        lireMatrice(plateau.get_plateau());
+        JButton btn3 = new JButton();
+        btn3.putClientProperty("idX", 0);
+        btn3.putClientProperty("idY", 3);
+        setImgInButton(btn3, "Cavalier", couleur);
+        btn3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                piece = new Cavalier(couleur, null);
+                enAttentePromotion = false;
+            }
+        });
+        GUIPromotion.add(btn3);
     }
     
     public static void afficherMessage(String message) {
@@ -247,14 +294,30 @@ public class JPanelPlateau extends JPanel{
         textArea.append(message + "\n");
     }
 
-    public void attenteInteraction() {
-        enAttente = true;
-        while (enAttente) {
+    public void attenteInteractionPlateau() {
+        enAttentePlateau = true;
+        while (enAttentePlateau) {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void attenteInteractionPromotion(Couleur couleur) {
+        enAttentePromotion = true;
+        GUIPromotion.removeAll();
+        setButtonPromotion(couleur);
+        GUIPromotion.setVisible(true);
+        while (enAttentePromotion) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        GUIPromotion.setVisible(false);
+        System.out.println("piece = " + piece);
     }
 }
