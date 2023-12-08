@@ -172,7 +172,8 @@ public class JPanelPlateau extends JPanel{
     }
 
     /**
-     * Fonction lireMatrice() qui permet le lire la matrice du plateau au niveau de l'interface graphique
+     * Fonction lireMatrice() qui permet de mettre à jour l'interface graphique (damier) en fonction de la matrice du plateau
+     * @param plateau : matrice du plateau représentant l'emplacement des pièces
      */
     public void lireMatrice(Piece[][] plateau) {
         // On supprime le contenu actuel du damier
@@ -191,13 +192,13 @@ public class JPanelPlateau extends JPanel{
                 btn.putClientProperty("idX", i+1);
                 btn.putClientProperty("idY", j);
 
-                // On alterne la couleur d'une case en fonction de la position pour créer un motif de damier
+                // On alterne la couleur d'une case en fonction de la position pour créer un motif de damier (Noir et blanc)
                 if ((i + j) % 2 == 0)
                     btn.setBackground(Color.WHITE);
                 else
                     btn.setBackground(Color.BLACK);
 
-                // On ajoute un ActionListener pour gérer les clics sur les boutons
+                // ActionListener qui représente l'action sur un bouton, lorsqu'il est cliqué : le code de l'ActionPerformed est exécuté
                 btn.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
