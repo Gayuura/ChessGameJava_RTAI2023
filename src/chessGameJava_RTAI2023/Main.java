@@ -99,7 +99,7 @@ public class Main {
                     i = 1;
                 }
 
-                Jeu.promotionPion(plateau, jPanelPlateau, Couleur.Blanc);
+                Jeu.promotionPion(plateau, jPanelPlateau, JBlanc);
 
             } else {
                 System.out.println("\nQue le Joueur Noir donne la position de la piece qu'il veut deplacer\n");
@@ -135,7 +135,7 @@ public class Main {
                     i = 0;
                 }
 
-                Jeu.promotionPion(plateau, jPanelPlateau, Couleur.Noir);
+                Jeu.promotionPion(plateau, jPanelPlateau, JNoir);
             }
             plateau.AfficherPlateau();
             jPanelPlateau.lireMatrice(plateau.get_plateau());

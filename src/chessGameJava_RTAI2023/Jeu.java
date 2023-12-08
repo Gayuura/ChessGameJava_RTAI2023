@@ -1,7 +1,5 @@
 package chessGameJava_RTAI2023;
 
-import javax.swing.*;
-
 public class Jeu implements IJeu{
 
     /**
@@ -140,14 +138,19 @@ public class Jeu implements IJeu{
     	return Termine;
     }
 
-	public static void promotionPion(Plateau plateau, JPanelPlateau jPanelPlateau, Couleur couleur){
-		for (int i = 0; i < 7; i++) {
-			for (int j = 0; j < 7; j++) {
+	public static void promotionPion(Plateau plateau, JPanelPlateau jPanelPlateau, Joueur joueur){
+		Couleur couleur = joueur.get_couleur();
+		for (int i = 0; i <= 7; i++) {
+			for (int j = 0; j <= 7; j++) {
 				Piece p = plateau.get_plateau()[i][j];
-				if(p != null){
-					if(p.get_couleur() == couleur && p.getClass().equals(Pion.class)){
+				if(p != null && p.getClass().getName().contains("Pion")){
+					if(p.get_couleur() == couleur ){
 						if(p.get_pos().get_x() == 0 || p.get_pos().get_x() == 7){
 							jPanelPlateau.attenteInteractionPromotion(couleur);
+							joueur.SuppPieceDispo(p);
+							p = jPanelPlateau.getPiece();
+							p.set_pos(new Position(i,j));
+							joueur.AddPieceDispo(p);
 							plateau.set_Piece(jPanelPlateau.getPiece(), p.get_pos().get_x(), p.get_pos().get_y());
 						}
 					}
