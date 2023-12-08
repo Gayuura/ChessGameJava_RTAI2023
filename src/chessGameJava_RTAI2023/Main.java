@@ -24,6 +24,9 @@ public class Main {
 //        plateau.set_plateau(test);
 
         plateau.AfficherPlateau(); //JUSTE POUR TESTER LA METHODE INITIALISER (TEST REUSSI)
+        // Test de la fonction lireMatrice() pour afficher le plateau avec ses pièces au départ
+        JPanelPlateau jPanelPlateau = new JPanelPlateau(JBlanc, JNoir);
+        jPanelPlateau.lireMatrice(plateau.get_plateau());
 
         System.out.println("Voici la liste des pieces dispo du Joueur Blanc :");
         System.out.println(JBlanc.AfficherList(JBlanc.get_PieceDispo())+"\n");
@@ -40,8 +43,8 @@ public class Main {
         
         
         
-        // Test de la fonction lireMatrice() pour afficher le plateau avec ses pièces au départ
-        JPanelPlateau jPanelPlateau = new JPanelPlateau(JBlanc, JNoir);
+
+
         // jPanelPlateau.afficherMessageGUI("Voici le plateau de départ : \n");
 
 
@@ -61,7 +64,6 @@ public class Main {
 
       //Lancement du jeu
         while (!jeu.echec_math(plateau, JNoir, JBlanc.RechercheRoiList()) && !jeu.echec_math(plateau, JBlanc, JNoir.RechercheRoiList())) {
-            jPanelPlateau.lireMatrice(plateau.get_plateau());
             if (i % 2 == 0) {
                 System.out.println("\nQue le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
                 jPanelPlateau.afficherMessageTourDeJeu(Couleur.Blanc);
@@ -94,7 +96,7 @@ public class Main {
                         pos_depart.DemanderPosDepart(JNoir, plateau, jPanelPlateau);
                         pos_arrivee.DemanderPosArrivee(JNoir, plateau, jPanelPlateau);
                     }
-                    
+                    i = 1;
                 }
 
                 Jeu.promotionPion(plateau, jPanelPlateau, Couleur.Blanc);
@@ -130,12 +132,13 @@ public class Main {
                         pos_depart.DemanderPosDepart(JBlanc, plateau, jPanelPlateau);
                         pos_arrivee.DemanderPosArrivee(JBlanc, plateau, jPanelPlateau);
                     }
-
+                    i = 0;
                 }
 
                 Jeu.promotionPion(plateau, jPanelPlateau, Couleur.Noir);
             }
             plateau.AfficherPlateau();
+            jPanelPlateau.lireMatrice(plateau.get_plateau());
             i++;
             
             
@@ -149,13 +152,33 @@ public class Main {
         //Annonce du gagnant
         if (jeu.echec_math(plateau, JNoir, JBlanc.RechercheRoiList())){
     		System.out.println("Le Roi Blanc est en echec et mat !\n"+"L'equipe Noire, "+JNoir.get_nom()+", a donc gagné !");
-            JPanelPlateau.afficherMessage("Le Roi Blanc est en échec et mat !\\n\"+\"L'équipe Noire, \"+JNoir.get_nom()+\", a donc gagné ! \n");
+            JPanelPlateau.afficherMessage("Le Roi Blanc est en echec et mat !\n"+"L'equipe Noire, "+JNoir.get_nom()+", a donc gagné !");
     	}
     	else if (jeu.echec_math(plateau, JBlanc, JNoir.RechercheRoiList())) {
     		System.out.println("Le Roi Noir est en echec et mat !\n"+"L'equipe Blanche, "+JBlanc.get_nom()+", a donc gagné !");
-            JPanelPlateau.afficherMessage("Le Roi Noir est en échec et mat !\\n\"+\"L'équipe Blanche, \"+JBlanc.get_nom()+\", a donc gagné ! \n");
+            JPanelPlateau.afficherMessage("Le Roi Noir est en echec et mat !\n"+"L'equipe Blanche, "+JBlanc.get_nom()+", a donc gagné !");
     	}
         
+        
+        
+        
+        
+        //POUR TESTER LES PIECES BLANCHES
+        /*for ( i = 0; i < 30; i++) {
+        	
+        	System.out.println("Que le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
+            jPanelPlateau.afficherMessageTourDeJeu(Couleur.Blanc);
+            pos_depart.DemanderPosDepart(JBlanc,plateau, jPanelPlateau);
+            System.out.println("Que le Joueur Blanc donne la position ou il veut mettre sa piece\n");
+            pos_arrivee.DemanderPosArrivee(JBlanc,plateau, jPanelPlateau);
+            while (!(JBlanc.jouer(plateau,JNoir,pos_depart,pos_arrivee))) {
+            	pos_depart.DemanderPosDepart(JBlanc,plateau, jPanelPlateau);
+            	pos_arrivee.DemanderPosArrivee(JBlanc,plateau, jPanelPlateau);
+            }
+            plateau.AfficherPlateau();
+            jPanelPlateau.lireMatrice(plateau.get_plateau());
+
+        }*/
         
         
         
@@ -163,32 +186,17 @@ public class Main {
         //POUR TESTER LES PIECES NOIRES
         /*for ( i = 0; i < 30; i++) {
         	
-        	System.out.println("Que le Joueur Blanc donne la position de la piece qu'il veut deplacer\n");
-            pos_depart.DemanderPosDepart(JBlanc,plateau);, jPanelPlateau
-            System.out.println("Que le Joueur Blanc donne la position ou il veut mettre sa piece\n");
-            pos_arrivee.DemanderPosArrivee(JBlanc,plateau);, jPanelPlateau
-            while (!(JBlanc.jouer(plateau,JNoir,pos_depart,pos_arrivee))) {
-            	pos_depart.DemanderPosDepart(JBlanc,plateau);, jPanelPlateau
-            	pos_arrivee.DemanderPosArrivee(JBlanc,plateau);, jPanelPlateau
-            }
-            plateau.AfficherPlateau();
-        }*/
-        
-        
-        
-        
-        //POUR TESTER LES PIECES BLANCHES
-        /*for (int i = 0; i < 30; i++) {
-        	
         	System.out.println("Que le Joueur Noir donne la position de la piece qu'il veut deplacer\n");
-            pos_depart.DemanderPosDepart(JNoir,plateau);, jPanelPlateau
+        	jPanelPlateau.afficherMessageTourDeJeu(Couleur.Noir);
+            pos_depart.DemanderPosDepart(JNoir,plateau, jPanelPlateau);
             System.out.println("Que le Joueur Noir donne la position ou il veut mettre sa piece\n");
-            pos_arrivee.DemanderPosArrivee(JNoir,plateau);, jPanelPlateau
+            pos_arrivee.DemanderPosArrivee(JNoir,plateau, jPanelPlateau);
             while (!(JNoir.jouer(plateau,JBlanc,pos_depart,pos_arrivee))) {
-            	pos_depart.DemanderPosDepart(JNoir,plateau);, jPanelPlateau
-            	pos_arrivee.DemanderPosArrivee(JNoir,plateau);, jPanelPlateau
+            	pos_depart.DemanderPosDepart(JNoir,plateau, jPanelPlateau);
+            	pos_arrivee.DemanderPosArrivee(JNoir,plateau, jPanelPlateau);
             }
             plateau.AfficherPlateau();
+            jPanelPlateau.lireMatrice(plateau.get_plateau());
         }*/
     }
 }
