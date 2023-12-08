@@ -24,6 +24,11 @@ public class JPanelPlateau extends JPanel{
 
     // Constructeur de la viariable plateau
 
+    /**
+     * Constructeur de la classe JPanelPlateau
+     * @param jBlanc
+     * @param jNoir
+     */
     public JPanelPlateau(Joueur jBlanc, Joueur jNoir) {
 
         leDamier.setLayout(new GridLayout(8,8));
@@ -55,14 +60,26 @@ public class JPanelPlateau extends JPanel{
         });
     }
 
+    /**
+     * Retourne l'idX
+     * @return
+     */
     public int getIdX() {
         return idX;
     }
 
+    /**
+     * Retourne l'idY
+     * @return
+     */
     public int getIdY() {
         return idY;
     }
 
+    /**
+     * Retourne la piece
+     * @return
+     */
     public Piece getPiece() {
         return piece;
     }
@@ -220,6 +237,10 @@ public class JPanelPlateau extends JPanel{
         leDamier.repaint();
     }
 
+    /**
+     * Fonction qui permet de définir les boutons du panel de promotion
+     * @param couleur
+     */
     private void setButtonPromotion(Couleur couleur) {
         JButton btn = new JButton();
         btn.putClientProperty("idX", 0);
@@ -273,28 +294,52 @@ public class JPanelPlateau extends JPanel{
         });
         GUIPromotion.add(btn3);
     }
-    
+
+    /**
+     * Fonction qui permet d'afficher un message dans une fenetre
+     * @param message
+     */
     public static void afficherMessage(String message) {
         JOptionPane.showMessageDialog(new JFrame(), message);
     }
 
+    /**
+     * Fonction qui permet d'afficher un message dans une fenetre et de recuperer la valeur saisie par l'utilisateur
+     * @param message
+     * @return
+     */
     public static String afficherInput(String message) {
         return JOptionPane.showInputDialog(new JFrame(), message);
     }
 
+    /**
+     * Fonction qui permet d'afficher un message dans une fenetre et retourner la valeur du bouton cliqué
+     * @param message
+     */
     public static int afficherConfirm(String message) {
         return JOptionPane.showConfirmDialog(new JFrame(), message);
     }
 
+    /**
+     * Fonction qui permet d'afficher un message dans la console de l'interface graphique
+     * @param message
+     */
     public void afficherMessageGUI(String message) {
         textArea.append(message + "\n");
     }
 
+    /**
+     * Fonction qui permet d'afficher le tour actuelle dans la console de l'interface graphique
+     * @param couleurJoueur
+     */
     public void afficherMessageTourDeJeu(Couleur couleurJoueur) {
         String message = "[" + couleurJoueur + "]";
         textArea.append(message + "\n");
     }
 
+    /**
+     * Fonction qui permet de mettre en pause le script tant que l'utilisateur n'a pas cliqué sur un bouton du plateau
+     */
     public void attenteInteractionPlateau() {
         enAttentePlateau = true;
         while (enAttentePlateau) {
@@ -306,6 +351,10 @@ public class JPanelPlateau extends JPanel{
         }
     }
 
+    /**
+     * Fonction qui permet de mettre en pause le script tant que l'utilisateur n'a pas cliqué sur un bouton du panel de promotion
+     * @param couleur
+     */
     public void attenteInteractionPromotion(Couleur couleur) {
         enAttentePromotion = true;
         GUIPromotion.removeAll();
